@@ -100,7 +100,7 @@
 
 
 
-  <meta name="keywords" content="Spring-Boot,java,">
+  <meta name="keywords" content="SSM,spring,">
 
 
 
@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="1.在pom文件添加依赖 12345678910111213&amp;lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --&amp;gt;       &amp;lt;dependency&amp;gt;           &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt;           &amp;lt;artifactId">
-<meta name="keywords" content="Spring-Boot,java">
+<meta name="description" content="我们在搭键一个项目的时候，有一些信息，比如数据库的连接信息通常会放在一个配置文件中，存放的是明码，我们可以对关键信息比如用户名和密码进行加密，就算别人获取了也没有用  加密后的效果 1234db.username = WnplV/ietfQ=db.password = j9ZTgFZm4H7r0AteGA6A7A==db.driver = com.mysql.jdbc.Driverdb.url">
+<meta name="keywords" content="SSM,spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring-boot 2.1.3配置Druid数据源">
-<meta property="og:url" content="http://edwardliu.work/spring-boot 2.1.3配置Druid数据源.html">
+<meta property="og:title" content="对项目中关键的配置信息进行加密">
+<meta property="og:url" content="http://edwardliu.work/对项目中关键的配置信息进行加密.html">
 <meta property="og:site_name" content="生如夏花">
-<meta property="og:description" content="1.在pom文件添加依赖 12345678910111213&amp;lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --&amp;gt;       &amp;lt;dependency&amp;gt;           &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt;           &amp;lt;artifactId">
+<meta property="og:description" content="我们在搭键一个项目的时候，有一些信息，比如数据库的连接信息通常会放在一个配置文件中，存放的是明码，我们可以对关键信息比如用户名和密码进行加密，就算别人获取了也没有用  加密后的效果 1234db.username = WnplV/ietfQ=db.password = j9ZTgFZm4H7r0AteGA6A7A==db.driver = com.mysql.jdbc.Driverdb.url">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-26T04:07:24.041Z">
+<meta property="og:updated_time" content="2019-04-26T07:16:11.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spring-boot 2.1.3配置Druid数据源">
-<meta name="twitter:description" content="1.在pom文件添加依赖 12345678910111213&amp;lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --&amp;gt;       &amp;lt;dependency&amp;gt;           &amp;lt;groupId&amp;gt;com.alibaba&amp;lt;/groupId&amp;gt;           &amp;lt;artifactId">
+<meta name="twitter:title" content="对项目中关键的配置信息进行加密">
+<meta name="twitter:description" content="我们在搭键一个项目的时候，有一些信息，比如数据库的连接信息通常会放在一个配置文件中，存放的是明码，我们可以对关键信息比如用户名和密码进行加密，就算别人获取了也没有用  加密后的效果 1234db.username = WnplV/ietfQ=db.password = j9ZTgFZm4H7r0AteGA6A7A==db.driver = com.mysql.jdbc.Driverdb.url">
 
 
 
@@ -152,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://edwardliu.work/spring-boot 2.1.3配置Druid数据源.html">
+  <link rel="canonical" href="http://edwardliu.work/对项目中关键的配置信息进行加密.html">
 
 
 
 
 
-  <title>spring-boot 2.1.3配置Druid数据源 | 生如夏花</title>
+  <title>对项目中关键的配置信息进行加密 | 生如夏花</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://edwardliu.work/spring-boot 2.1.3配置Druid数据源.html">
+    <link itemprop="mainEntityOfPage" href="http://edwardliu.work/对项目中关键的配置信息进行加密.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Edward Liu">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">spring-boot 2.1.3配置Druid数据源</h1>
+          <h1 class="post-title" itemprop="name headline">对项目中关键的配置信息进行加密</h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-23T13:27:25+08:00">
-                2019-04-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-26T13:27:25+08:00">
+                2019-04-26
               </time>
             
 
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  490
+                  788
                 </span>
               
 
@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -434,11 +434,28 @@
       
 
       
-        <p>1.在pom文件添加依赖</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.10<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j </span></span><br><span class="line"><span class="comment">       yml配置文件中filters: stat,wall,log4j所以要加此依赖，否侧会报错--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p><font size="3" color="green">我们在搭键一个项目的时候，有一些信息，比如数据库的连接信息通常会放在一个配置文件中，存放的是明码，我们可以对关键信息比如用户名和密码进行加密，就算别人获取了也没有用</font></p>
+</blockquote>
+<p><strong>加密后的效果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.username = WnplV/ietfQ=</span><br><span class="line">db.password = j9ZTgFZm4H7r0AteGA6A7A==</span><br><span class="line">db.driver = com.mysql.jdbc.Driver</span><br><span class="line">db.url = jdbc:mysql://localhost:3306/o2o?useUnicode=true&amp;characterEncoding=utf8</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>2.在配置文件中配置数据库信息<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="comment">#   数据源基本配置</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">root</span></span><br><span class="line"><span class="attr">    password:</span> <span class="number">123456</span><span class="string">abcd</span></span><br><span class="line"><span class="attr">    driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="comment">#注意要配置serverTimezone等信息</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:mysql://localhost:3306/books?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br><span class="line"><span class="comment">#   数据源其他配置</span></span><br><span class="line"><span class="attr">    initialSize:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">    minIdle:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">    maxActive:</span> <span class="number">20</span></span><br><span class="line"><span class="attr">    maxWait:</span> <span class="number">60000</span></span><br><span class="line"><span class="attr">    timeBetweenEvictionRunsMillis:</span> <span class="number">60000</span></span><br><span class="line"><span class="attr">    minEvictableIdleTimeMillis:</span> <span class="number">300000</span></span><br><span class="line"><span class="attr">    validationQuery:</span> <span class="string">SELECT</span> <span class="number">1</span> <span class="string">FROM</span> <span class="string">DUAL</span></span><br><span class="line"><span class="attr">    testWhileIdle:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    testOnBorrow:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    testOnReturn:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    poolPreparedStatements:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment">#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙</span></span><br><span class="line"><span class="attr">    filters:</span> <span class="string">stat,wall,log4j</span></span><br><span class="line"><span class="attr">    maxPoolPreparedStatementPerConnectionSize:</span> <span class="number">20</span></span><br><span class="line"><span class="attr">    useGlobalDataSourceStat:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    connectionProperties:</span> <span class="string">druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500</span></span><br></pre></td></tr></table></figure></p>
-<p>3.添加Druid的配置类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.edward.springbootmybaties.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.support.http.StatViewServlet;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.support.http.WebStatFilter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.web.servlet.FilterRegistrationBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.web.servlet.ServletRegistrationBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DruidConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="comment">//这样yml配置文件才会起作用，和Druid类绑定起来</span></span><br><span class="line">    <span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.datasource"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">druid</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//配置Druid的监控</span></span><br><span class="line">    <span class="comment">//1、配置一个管理后台的Servlet</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ServletRegistrationBean <span class="title">statViewServlet</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ServletRegistrationBean bean = <span class="keyword">new</span> ServletRegistrationBean(<span class="keyword">new</span> StatViewServlet(), <span class="string">"/druid/*"</span>);</span><br><span class="line">        Map&lt;String,String&gt; initParams = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        initParams.put(<span class="string">"loginUsername"</span>,<span class="string">"admin"</span>);</span><br><span class="line">        initParams.put(<span class="string">"loginPassword"</span>,<span class="string">"123456"</span>);</span><br><span class="line">        initParams.put(<span class="string">"allow"</span>,<span class="string">""</span>);<span class="comment">//默认就是允许所有访问</span></span><br><span class="line">        initParams.put(<span class="string">"deny"</span>,<span class="string">"192.168.15.21"</span>);</span><br><span class="line"></span><br><span class="line">        bean.setInitParameters(initParams);</span><br><span class="line">        <span class="keyword">return</span> bean;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//2、配置一个web监控的filter</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> FilterRegistrationBean <span class="title">webStatFilter</span><span class="params">()</span></span>&#123;</span><br><span class="line">        FilterRegistrationBean bean = <span class="keyword">new</span> FilterRegistrationBean();</span><br><span class="line">        bean.setFilter(<span class="keyword">new</span> WebStatFilter());</span><br><span class="line"></span><br><span class="line">        Map&lt;String,String&gt; initParams = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        initParams.put(<span class="string">"exclusions"</span>,<span class="string">"*.js,*.css,/druid/*"</span>);</span><br><span class="line"></span><br><span class="line">        bean.setInitParameters(initParams);</span><br><span class="line"></span><br><span class="line">        bean.setUrlPatterns(Arrays.asList(<span class="string">"/*"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span>  bean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="一、首先创建一个加密的工具类，对信息进行加密"><a href="#一、首先创建一个加密的工具类，对信息进行加密" class="headerlink" title="一、首先创建一个加密的工具类，对信息进行加密"></a>一、首先创建一个加密的工具类，对信息进行加密</h4><p>我用的是DES对称加密</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.edward.o2o.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.security.Key;</span><br><span class="line"><span class="keyword">import</span> java.security.SecureRandom;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.crypto.Cipher;</span><br><span class="line"><span class="keyword">import</span> javax.crypto.KeyGenerator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sun.misc.BASE64Decoder;</span><br><span class="line"><span class="keyword">import</span> sun.misc.BASE64Encoder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DESUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Key key;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String KEY_STR = <span class="string">"myKey"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String CHARSETNAME = <span class="string">"UTF-8"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String ALGORITHM = <span class="string">"DES"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			KeyGenerator generator = KeyGenerator.getInstance(ALGORITHM);</span><br><span class="line">			SecureRandom secureRandom = SecureRandom.getInstance(<span class="string">"SHA1PRNG"</span>);</span><br><span class="line">			secureRandom.setSeed(KEY_STR.getBytes());</span><br><span class="line">			generator.init(secureRandom);</span><br><span class="line">			key = generator.generateKey();</span><br><span class="line">			generator = <span class="keyword">null</span>;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getEncryptString</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">		BASE64Encoder base64encoder = <span class="keyword">new</span> BASE64Encoder();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">byte</span>[] bytes = str.getBytes(CHARSETNAME);</span><br><span class="line">			Cipher cipher = Cipher.getInstance(ALGORITHM);</span><br><span class="line">			cipher.init(Cipher.ENCRYPT_MODE, key);</span><br><span class="line">			<span class="keyword">byte</span>[] doFinal = cipher.doFinal(bytes);</span><br><span class="line">			<span class="keyword">return</span> base64encoder.encode(doFinal);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getDecryptString</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">		BASE64Decoder base64decoder = <span class="keyword">new</span> BASE64Decoder();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">byte</span>[] bytes = base64decoder.decodeBuffer(str);</span><br><span class="line">			Cipher cipher = Cipher.getInstance(ALGORITHM);</span><br><span class="line">			cipher.init(Cipher.DECRYPT_MODE, key);</span><br><span class="line">			<span class="keyword">byte</span>[] doFinal = cipher.doFinal(bytes);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> String(doFinal, CHARSETNAME);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(e);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(getEncryptString(<span class="string">"root"</span>));</span><br><span class="line">		System.out.println(getEncryptString(<span class="string">"123456abCD."</span>));</span><br><span class="line">		System.out.println(getEncryptString(<span class="string">"wxd7f6c5b8899fba83"</span>));</span><br><span class="line">		System.out.println(getEncryptString(<span class="string">"665ae80dba31fc91ab6191e7da4d676d"</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><font size="3" color="green">通过main方法，把要加密的信息输出到控制台得到密文,再把对应的明文换成加密后的密文</font></p>
+</blockquote>
+<h4 id="二、创建一个PropertyPlaceholderConfigurer的后置处理器，在spring中解析配置文件"><a href="#二、创建一个PropertyPlaceholderConfigurer的后置处理器，在spring中解析配置文件" class="headerlink" title="二、创建一个PropertyPlaceholderConfigurer的后置处理器，在spring中解析配置文件"></a>二、创建一个PropertyPlaceholderConfigurer的后置处理器，在spring中解析配置文件</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.edward.o2o.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EncryptPropertyPlaceholderConfigurer</span> <span class="keyword">extends</span></span></span><br><span class="line"><span class="class">		<span class="title">PropertyPlaceholderConfigurer</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String[] encryptPropNames = &#123; <span class="string">"db.username"</span>, <span class="string">"db.password"</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> String <span class="title">convertProperty</span><span class="params">(String propertyName, String propertyValue)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (isEncryptProp(propertyName)) &#123;</span><br><span class="line">			String decryptValue = DESUtils.getDecryptString(propertyValue);</span><br><span class="line">			<span class="keyword">return</span> decryptValue;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> propertyValue;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isEncryptProp</span><span class="params">(String propertyName)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (String encryptpropertyName : encryptPropNames) &#123;</span><br><span class="line">			<span class="keyword">if</span> (encryptpropertyName.equals(propertyName))</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="三、把配置文件加载到spring的配置文件中"><a href="#三、把配置文件加载到spring的配置文件中" class="headerlink" title="三、把配置文件加载到spring的配置文件中"></a>三、把配置文件加载到spring的配置文件中</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 1.配置数据库相关参数properties的属性：$&#123;url&#125; --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--&lt;context:property-placeholder location="classpath:db.properties"/&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.edward.o2o.util.EncryptPropertyPlaceholderConfigurer"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"locations"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>classpath:db.properties<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"fileEncoding"</span> <span class="attr">value</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><font size="3" color="green">class就是第二步中用于解析配置文件的类</font></p>
+</blockquote>
+<blockquote>
+<p><font size="3" color="green">总结：<br>  整个过程就是利用加密的工具类对关键信息加密把原文替换成密文，然后在spring的配置文件中加载需要的配置文件（比如数据库的配置文件），加载过程中PropertyPlaceholderConfigurer后置处理器会调用加密工具类中的解密文件返回明文</font></p>
+</blockquote>
+<blockquote>
+<p><font size="3" color="green"> PropertyPlaceholderConfigurer是个bean工厂后置处理器的实现，也就是 BeanFactoryPostProcessor接口的一个实现。PropertyPlaceholderConfigurer可以将上下文（配置文 件）中的属性值放在另一个单独的标准java Properties文件中去。在XML文件中用${key}替换指定的properties文件中的值。这样的话，只需要对properties文件进 行修改，而不用对xml配置文件进行修改。</font></p>
+</blockquote>
 
       
     </div>
@@ -493,9 +510,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Spring-Boot/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>Spring-Boot</a>
+            <a href="/tags/SSM/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>SSM</a>
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>java</a>
+            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>spring</a>
           
         </div>
       
@@ -508,8 +525,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/SSM整合逐层配置.html" rel="next" title="SSM整合逐层配置">
-                <i class="fa fa-chevron-left"></i> SSM整合逐层配置
+              <a href="/spring-boot 2.1.3配置Druid数据源.html" rel="next" title="spring-boot 2.1.3配置Druid数据源">
+                <i class="fa fa-chevron-left"></i> spring-boot 2.1.3配置Druid数据源
               </a>
             
           </div>
@@ -517,10 +534,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/对项目中关键的配置信息进行加密.html" rel="prev" title="对项目中关键的配置信息进行加密">
-                对项目中关键的配置信息进行加密 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,8 +611,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -691,6 +713,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、首先创建一个加密的工具类，对信息进行加密"><span class="nav-number">1.</span> <span class="nav-text">一、首先创建一个加密的工具类，对信息进行加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、创建一个PropertyPlaceholderConfigurer的后置处理器，在spring中解析配置文件"><span class="nav-number">2.</span> <span class="nav-text">二、创建一个PropertyPlaceholderConfigurer的后置处理器，在spring中解析配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、把配置文件加载到spring的配置文件中"><span class="nav-number">3.</span> <span class="nav-text">三、把配置文件加载到spring的配置文件中</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
