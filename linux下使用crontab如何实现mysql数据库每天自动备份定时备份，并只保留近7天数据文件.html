@@ -100,7 +100,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="linux,">
 
 
 
@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="专注于技术分享">
-<meta name="keywords" content="java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://edwardliu.work/tags/index.html">
+<meta name="description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux下使用crontab如何实现mysql数据库每天自动备份定时备份">
+<meta property="og:url" content="http://edwardliu.work/linux下使用crontab如何实现mysql数据库每天自动备份定时备份，并只保留近7天数据文件.html">
 <meta property="og:site_name" content="生如夏花">
-<meta property="og:description" content="专注于技术分享">
+<meta property="og:description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-23T04:53:51.903Z">
+<meta property="og:updated_time" content="2019-04-26T11:41:56.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="专注于技术分享">
+<meta name="twitter:title" content="linux下使用crontab如何实现mysql数据库每天自动备份定时备份">
+<meta name="twitter:description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
 
 
 
@@ -152,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://edwardliu.work/tags/">
+  <link rel="canonical" href="http://edwardliu.work/linux下使用crontab如何实现mysql数据库每天自动备份定时备份，并只保留近7天数据文件.html">
 
 
 
 
 
-  <title>标签 | 生如夏花</title>
+  <title>linux下使用crontab如何实现mysql数据库每天自动备份定时备份 | 生如夏花</title>
   
 
 
@@ -297,40 +297,294 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://edwardliu.work/linux下使用crontab如何实现mysql数据库每天自动备份定时备份，并只保留近7天数据文件.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Edward Liu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生如夏花">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 7 个标签
+          <h1 class="post-title" itemprop="name headline">linux下使用crontab如何实现mysql数据库每天自动备份定时备份</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-26T19:27:25+08:00">
+                2019-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  526
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/SSM/" style="font-size: 12px; color: #ccc">SSM</a> <a href="/tags/Spring-Boot/" style="font-size: 12px; color: #ccc">Spring-Boot</a> <a href="/tags/java/" style="font-size: 12px; color: #ccc">java</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/spring/" style="font-size: 12px; color: #ccc">spring</a> <a href="/tags/ssm/" style="font-size: 12px; color: #ccc">ssm</a> <a href="/tags/前端/" style="font-size: 12px; color: #ccc">前端</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="1-编辑shell脚本-备份-amp-清理"><a href="#1-编辑shell脚本-备份-amp-清理" class="headerlink" title="1. 编辑shell脚本 (备份&amp;清理)"></a>1. 编辑shell脚本 (备份&amp;清理)</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>在此设置要备份的数据库名,以TEST为例</span><br><span class="line">DBNAME="TEST" </span><br><span class="line"><span class="meta">#</span>备份数据临时存放位置,备份完成之后自动删除.			</span><br><span class="line">BACKDIR="/home/root/backup/" </span><br><span class="line"><span class="meta">#</span>获取系统时间</span><br><span class="line">DATE=`date +%Y%m%d`</span><br><span class="line"><span class="meta">#</span>备份文件名以时间命名	</span><br><span class="line">FILENAME=dump_$&#123;DATE&#125;.sql </span><br><span class="line"><span class="meta">#</span>进入备份目录</span><br><span class="line">cd $&#123;BACKDIR&#125; </span><br><span class="line"><span class="meta">#</span>备份数据库并追加日志</span><br><span class="line">mysqldump -uroot -proot --databases TEST &gt; $&#123;BACKDIR&#125;$&#123;FILENAME&#125; &gt;&gt; db_backup.log</span><br><span class="line"><span class="meta">#</span>删除近7天文件</span><br><span class="line">find $&#123;BACKDIR&#125; -mtime +7 -name "*.sql" -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="2-将脚本加入crontab自动执行计划"><a href="#2-将脚本加入crontab自动执行计划" class="headerlink" title="2. 将脚本加入crontab自动执行计划"></a>2. 将脚本加入crontab自动执行计划</h3><p>添加计划</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>加入一行:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>每天晚上11点半, 执行对应路径下的脚本.</span><br><span class="line">30 23 * * *  /home/root/backup.sh</span><br></pre></td></tr></table></figure></p>
+<p>保存退出(vim命令)</p>
+<h3 id="3-Cron-各项的描述"><a href="#3-Cron-各项的描述" class="headerlink" title="3.  Cron 各项的描述"></a>3.  Cron 各项的描述</h3><p>以下是 crontab 文件的格式：</p>
+<p>{minute} {hour} {day-of-month} {month} {day-of-week} {full-path-to-shell-script}<br>minute: 区间为 0 – 59<br>hour: 区间为0 – 23<br>day-of-month: 区间为0 – 31<br>month: 区间为1 – 12. 1 是1月. 12是12月.<br>Day-of-week: 区间为0 – 7. 周日可以是0或7.</p>
+<h3 id="4-Crontab-示例"><a href="#4-Crontab-示例" class="headerlink" title="4.Crontab 示例"></a>4.Crontab 示例</h3><ol>
+<li><p>在 12:01 a.m 运行，即每天凌晨过一分钟。这是一个恰当的进行备份的时间，因为此时系统负载不大。</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 0 * * * /root/bin/backup.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>每个工作日(Mon – Fri) 11:59 p.m 都进行备份作业。</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">59 11 * * 1,2,3,4,5 /root/bin/backup.sh</span><br></pre></td></tr></table></figure>
+<p> 下面例子与上面的例子效果一样：</p>
+</li>
+</ol>
+<pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">59 11 * * 1-5 /root/bin/backup.sh</span><br></pre></td></tr></table></figure>
+</code></pre><ol start="3">
+<li><p>每5分钟运行一次命令</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/5 * * * * /root/bin/check-status.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>每个月的第一天 1:10 p.m 运行</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 13 1 * * /root/bin/full-backup.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>每个工作日 11 p.m 运行。</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 23 * * 1-5 /root/bin/incremental-backup.sh</span><br></pre></td></tr></table></figure>
+<h3 id="4-crontab常用的命令"><a href="#4-crontab常用的命令" class="headerlink" title="4. crontab常用的命令"></a>4. crontab常用的命令</h3></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">service crond start    //启动服务</span><br><span class="line">service crond stop     //关闭服务</span><br><span class="line">service crond restart  //重启服务</span><br><span class="line">service crond reload   //重新载入配置</span><br><span class="line">service crond status   //查看服务状态 </span><br><span class="line">crontab –e             //往 cron 中添加一个作业</span><br><span class="line">crontab –e             //修改 crontab 文件. 如果文件不存在会自动创建。 </span><br><span class="line">crontab –l             //显示 crontab 文件。 </span><br><span class="line">crontab -r             //删除 crontab 文件。</span><br><span class="line">crontab -ir            //删除 crontab 文件前提醒用户</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat.jpg" alt="Edward Liu wechat" style="width: 200px; max-width: 100%;">
+    <div>扫一扫可以关注我哦</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Edward Liu 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Edward Liu 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/对项目中关键的配置信息进行加密.html" rel="next" title="对项目中关键的配置信息进行加密">
+                <i class="fa fa-chevron-left"></i> 对项目中关键的配置信息进行加密
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -363,8 +617,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,6 +719,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-编辑shell脚本-备份-amp-清理"><span class="nav-number">1.</span> <span class="nav-text">1. 编辑shell脚本 (备份&amp;清理)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将脚本加入crontab自动执行计划"><span class="nav-number">2.</span> <span class="nav-text">2. 将脚本加入crontab自动执行计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Cron-各项的描述"><span class="nav-number">3.</span> <span class="nav-text">3.  Cron 各项的描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Crontab-示例"><span class="nav-number">4.</span> <span class="nav-text">4.Crontab 示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-crontab常用的命令"><span class="nav-number">5.</span> <span class="nav-text">4. crontab常用的命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
