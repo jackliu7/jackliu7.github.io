@@ -119,7 +119,7 @@
 <meta property="og:site_name" content="生如夏花">
 <meta property="og:description" content="首先看一下实现的效果，在公众号中，用户进入你的应用之前，会弹出一个授权页面，当用户点击确认后，你就可以获取用户的信息">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190428215534722.png#pic_center">
+<meta property="og:image" content="http://image.edwardliu.work/20190429.png#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190428220717195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190428220623259.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190428221253788.png">
@@ -127,11 +127,11 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190428223540524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190428223921488.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019042822401320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-04-29T04:22:10.979Z">
+<meta property="og:updated_time" content="2019-04-29T06:00:47.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信公众号如何授权登录、获取用户信息(openid)">
 <meta name="twitter:description" content="首先看一下实现的效果，在公众号中，用户进入你的应用之前，会弹出一个授权页面，当用户点击确认后，你就可以获取用户的信息">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190428215534722.png#pic_center">
+<meta name="twitter:image" content="http://image.edwardliu.work/20190429.png#pic_center">
 
 
 
@@ -443,7 +443,7 @@
       
 
       
-        <p>首先看一下实现的效果，在公众号中，用户进入你的应用之前，会弹出一个授权页面，当用户点击确认后，你就可以获取用户的信息<br><img src="https://img-blog.csdnimg.cn/20190428215534722.png#pic_center" alt="在这里插入图片描述"><br><a id="more"></a></p>
+        <p>首先看一下实现的效果，在公众号中，用户进入你的应用之前，会弹出一个授权页面，当用户点击确认后，你就可以获取用户的信息<br><img src="http://image.edwardliu.work/20190429.png#pic_center" alt="在这里插入图片描述"><br><a id="more"></a></p>
 <p>首先访问微信测试号登录页面，通过打开自己手机的微信，扫一扫登录<br><a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login</a><br><img src="https://img-blog.csdnimg.cn/20190428220717195.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>进入到测试号页面后，分别看到如下信息<br>【测试号信息】<br>appID:开发者ID，是公众号开发识别码，配合开发者密码可以调用微信公众号接口，如获取微信昵称等<br>appsecret:开发者密码，是检验公众号开发者身份的密码，具有极高的安全性。切记不要把密码交给第三方开发者或者编写到代码里<br><img src="https://img-blog.csdnimg.cn/20190428220623259.png" alt="在这里插入图片描述"><br>【接口配置信息】<br>URL: 是开发者用来接收微信消息和事件的接口URL，要用域名不能用ip<br>Token:由开发者可以任意填写，用作生成签名（该Token会和接口URL中包含的Token进行比对，从而验证安全性）<br><img src="https://img-blog.csdnimg.cn/20190428221253788.png" alt="在这里插入图片描述"></p>
 <blockquote>
 <p><font size="3" color="green">当你填完URL和Token点击提交后，微信会访问你填写的URL，所以要在后台写一个servlet来处理这个请求</font></p>
