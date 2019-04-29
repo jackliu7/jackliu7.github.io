@@ -119,7 +119,7 @@
 <meta property="og:site_name" content="生如夏花">
 <meta property="og:description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-26T11:41:56.492Z">
+<meta property="og:updated_time" content="2019-04-26T12:01:27.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下使用crontab如何实现mysql数据库每天自动备份定时备份">
 <meta name="twitter:description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  526
+                  518
                 </span>
               
 
@@ -447,12 +447,8 @@
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 0 * * * /root/bin/backup.sh</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>每个工作日(Mon – Fri) 11:59 p.m 都进行备份作业。</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">59 11 * * 1,2,3,4,5 /root/bin/backup.sh</span><br></pre></td></tr></table></figure>
-<p> 下面例子与上面的例子效果一样：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">59 11 * * 1,2,3,4,5 /root/bin/backup.sh</span><br><span class="line"><span class="meta">#</span>或者59 11 * * 1-5 /root/bin/backup.sh效果一样</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">59 11 * * 1-5 /root/bin/backup.sh</span><br></pre></td></tr></table></figure>
-</code></pre><ol start="3">
 <li><p>每5分钟运行一次命令</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/5 * * * * /root/bin/check-status.sh</span><br></pre></td></tr></table></figure>
 </li>
@@ -461,7 +457,7 @@
 </li>
 <li><p>每个工作日 11 p.m 运行。</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 23 * * 1-5 /root/bin/incremental-backup.sh</span><br></pre></td></tr></table></figure>
-<h3 id="4-crontab常用的命令"><a href="#4-crontab常用的命令" class="headerlink" title="4. crontab常用的命令"></a>4. crontab常用的命令</h3></li>
+<h3 id="5-crontab常用的命令"><a href="#5-crontab常用的命令" class="headerlink" title="5. crontab常用的命令"></a>5. crontab常用的命令</h3></li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">service crond start    //启动服务</span><br><span class="line">service crond stop     //关闭服务</span><br><span class="line">service crond restart  //重启服务</span><br><span class="line">service crond reload   //重新载入配置</span><br><span class="line">service crond status   //查看服务状态 </span><br><span class="line">crontab –e             //往 cron 中添加一个作业</span><br><span class="line">crontab –e             //修改 crontab 文件. 如果文件不存在会自动创建。 </span><br><span class="line">crontab –l             //显示 crontab 文件。 </span><br><span class="line">crontab -r             //删除 crontab 文件。</span><br><span class="line">crontab -ir            //删除 crontab 文件前提醒用户</span><br></pre></td></tr></table></figure>
 
@@ -540,6 +536,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/微信公众号如何授权登录、获取用户信息(openid).html" rel="prev" title="微信公众号如何授权登录、获取用户信息(openid)">
+                微信公众号如何授权登录、获取用户信息(openid) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -644,7 +644,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -666,7 +666,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -729,7 +729,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-编辑shell脚本-备份-amp-清理"><span class="nav-number">1.</span> <span class="nav-text">1. 编辑shell脚本 (备份&amp;清理)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将脚本加入crontab自动执行计划"><span class="nav-number">2.</span> <span class="nav-text">2. 将脚本加入crontab自动执行计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Cron-各项的描述"><span class="nav-number">3.</span> <span class="nav-text">3.  Cron 各项的描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Crontab-示例"><span class="nav-number">4.</span> <span class="nav-text">4.Crontab 示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-crontab常用的命令"><span class="nav-number">5.</span> <span class="nav-text">4. crontab常用的命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-编辑shell脚本-备份-amp-清理"><span class="nav-number">1.</span> <span class="nav-text">1. 编辑shell脚本 (备份&amp;清理)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将脚本加入crontab自动执行计划"><span class="nav-number">2.</span> <span class="nav-text">2. 将脚本加入crontab自动执行计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Cron-各项的描述"><span class="nav-number">3.</span> <span class="nav-text">3.  Cron 各项的描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Crontab-示例"><span class="nav-number">4.</span> <span class="nav-text">4.Crontab 示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-crontab常用的命令"><span class="nav-number">5.</span> <span class="nav-text">5. crontab常用的命令</span></a></li></ol></div>
             
 
           </div>
