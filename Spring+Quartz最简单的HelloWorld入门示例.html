@@ -100,7 +100,7 @@
 
 
 
-  <meta name="keywords" content="linux,">
+  <meta name="keywords" content="Quartz,">
 
 
 
@@ -111,18 +111,20 @@
 
 
 
-<meta name="description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
-<meta name="keywords" content="linux">
+<meta name="description" content="实现的效果，定时执行">
+<meta name="keywords" content="Quartz">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux下使用crontab如何实现mysql数据库每天自动备份定时备份">
-<meta property="og:url" content="http://edwardliu.work/linux下使用crontab如何实现mysql数据库每天自动备份定时备份，并只保留近7天数据文件.html">
+<meta property="og:title" content="Spring+Quartz最简单的HelloWorld入门示例">
+<meta property="og:url" content="http://edwardliu.work/Spring+Quartz最简单的HelloWorld入门示例.html">
 <meta property="og:site_name" content="生如夏花">
-<meta property="og:description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
+<meta property="og:description" content="实现的效果，定时执行">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-26T12:01:27.700Z">
+<meta property="og:image" content="http://image.edwardliu.work/blog/20190430/T8tUYerTBYYs.png">
+<meta property="og:updated_time" content="2019-04-30T02:56:21.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux下使用crontab如何实现mysql数据库每天自动备份定时备份">
-<meta name="twitter:description" content="1. 编辑shell脚本 (备份&amp;amp;清理)123456789101112131415#!/bin/bash#在此设置要备份的数据库名,以TEST为例DBNAME=&quot;TEST&quot; #备份数据临时存放位置,备份完成之后自动删除.			BACKDIR=&quot;/home/root/backup/&quot; #获取系统时间DATE=`date +%Y%m%d`#备份文件名以时间命名	FILENAME=dump_$&amp;">
+<meta name="twitter:title" content="Spring+Quartz最简单的HelloWorld入门示例">
+<meta name="twitter:description" content="实现的效果，定时执行">
+<meta name="twitter:image" content="http://image.edwardliu.work/blog/20190430/T8tUYerTBYYs.png">
 
 
 
@@ -152,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://edwardliu.work/linux下使用crontab如何实现mysql数据库每天自动备份定时备份，并只保留近7天数据文件.html">
+  <link rel="canonical" href="http://edwardliu.work/Spring+Quartz最简单的HelloWorld入门示例.html">
 
 
 
 
 
-  <title>linux下使用crontab如何实现mysql数据库每天自动备份定时备份 | 生如夏花</title>
+  <title>Spring+Quartz最简单的HelloWorld入门示例 | 生如夏花</title>
   
 
 
@@ -309,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://edwardliu.work/linux下使用crontab如何实现mysql数据库每天自动备份定时备份，并只保留近7天数据文件.html">
+    <link itemprop="mainEntityOfPage" href="http://edwardliu.work/Spring+Quartz最简单的HelloWorld入门示例.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Edward Liu">
@@ -326,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux下使用crontab如何实现mysql数据库每天自动备份定时备份</h1>
+          <h1 class="post-title" itemprop="name headline">Spring+Quartz最简单的HelloWorld入门示例</h1>
         
 
         <div class="post-meta">
@@ -338,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-26T19:27:25+08:00">
-                2019-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T10:55:25+08:00">
+                2019-04-30
               </time>
             
 
@@ -361,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/编程杂记/" itemprop="url" rel="index">
+                    <span itemprop="name">编程杂记</span>
                   </a>
                 </span>
 
@@ -397,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  518
+                  479
                 </span>
               
 
@@ -434,32 +436,18 @@
       
 
       
-        <h3 id="1-编辑shell脚本-备份-amp-清理"><a href="#1-编辑shell脚本-备份-amp-清理" class="headerlink" title="1. 编辑shell脚本 (备份&amp;清理)"></a>1. 编辑shell脚本 (备份&amp;清理)</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>在此设置要备份的数据库名,以TEST为例</span><br><span class="line">DBNAME="TEST" </span><br><span class="line"><span class="meta">#</span>备份数据临时存放位置,备份完成之后自动删除.			</span><br><span class="line">BACKDIR="/home/root/backup/" </span><br><span class="line"><span class="meta">#</span>获取系统时间</span><br><span class="line">DATE=`date +%Y%m%d`</span><br><span class="line"><span class="meta">#</span>备份文件名以时间命名	</span><br><span class="line">FILENAME=dump_$&#123;DATE&#125;.sql </span><br><span class="line"><span class="meta">#</span>进入备份目录</span><br><span class="line">cd $&#123;BACKDIR&#125; </span><br><span class="line"><span class="meta">#</span>备份数据库并追加日志</span><br><span class="line">mysqldump -uroot -proot --databases TEST &gt; $&#123;BACKDIR&#125;$&#123;FILENAME&#125; &gt;&gt; db_backup.log</span><br><span class="line"><span class="meta">#</span>删除近7天文件</span><br><span class="line">find $&#123;BACKDIR&#125; -mtime +7 -name "*.sql" -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2-将脚本加入crontab自动执行计划"><a href="#2-将脚本加入crontab自动执行计划" class="headerlink" title="2. 将脚本加入crontab自动执行计划"></a>2. 将脚本加入crontab自动执行计划</h3><p>添加计划</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
-<p>加入一行:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>每天晚上11点半, 执行对应路径下的脚本.</span><br><span class="line">30 23 * * *  /home/root/backup.sh</span><br></pre></td></tr></table></figure></p>
-<p>保存退出(vim命令)</p>
-<h3 id="3-Cron-各项的描述"><a href="#3-Cron-各项的描述" class="headerlink" title="3.  Cron 各项的描述"></a>3.  Cron 各项的描述</h3><p>以下是 crontab 文件的格式：</p>
-<p>{minute} {hour} {day-of-month} {month} {day-of-week} {full-path-to-shell-script}<br>minute: 区间为 0 – 59<br>hour: 区间为0 – 23<br>day-of-month: 区间为0 – 31<br>month: 区间为1 – 12. 1 是1月. 12是12月.<br>Day-of-week: 区间为0 – 7. 周日可以是0或7.</p>
-<h3 id="4-Crontab-示例"><a href="#4-Crontab-示例" class="headerlink" title="4.Crontab 示例"></a>4.Crontab 示例</h3><ol>
-<li><p>在 12:01 a.m 运行，即每天凌晨过一分钟。这是一个恰当的进行备份的时间，因为此时系统负载不大。</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 0 * * * /root/bin/backup.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>每个工作日(Mon – Fri) 11:59 p.m 都进行备份作业。</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">59 11 * * 1,2,3,4,5 /root/bin/backup.sh</span><br><span class="line"><span class="meta">#</span>或者59 11 * * 1-5 /root/bin/backup.sh效果一样</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>每5分钟运行一次命令</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/5 * * * * /root/bin/check-status.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>每个月的第一天 1:10 p.m 运行</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 13 1 * * /root/bin/full-backup.sh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>每个工作日 11 p.m 运行。</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 23 * * 1-5 /root/bin/incremental-backup.sh</span><br></pre></td></tr></table></figure>
-<h3 id="5-crontab常用的命令"><a href="#5-crontab常用的命令" class="headerlink" title="5. crontab常用的命令"></a>5. crontab常用的命令</h3></li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">service crond start    //启动服务</span><br><span class="line">service crond stop     //关闭服务</span><br><span class="line">service crond restart  //重启服务</span><br><span class="line">service crond reload   //重新载入配置</span><br><span class="line">service crond status   //查看服务状态 </span><br><span class="line">crontab –e             //往 cron 中添加一个作业</span><br><span class="line">crontab –e             //修改 crontab 文件. 如果文件不存在会自动创建。 </span><br><span class="line">crontab –l             //显示 crontab 文件。 </span><br><span class="line">crontab -r             //删除 crontab 文件。</span><br><span class="line">crontab -ir            //删除 crontab 文件前提醒用户</span><br></pre></td></tr></table></figure>
+        <p>实现的效果，定时执行<br><img src="http://image.edwardliu.work/blog/20190430/T8tUYerTBYYs.png" alt="mark"><br><a id="more"></a><br>有关Quartz不做介绍，可自行学习<br>首先添加依赖</p>
+<blockquote>
+<p><font size="3" color="green">spring相关的依赖根据自己的版本添加，注意要加spring-context-support的依赖，版本和spring的版本保持一致就可以了</font></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.quartz-scheduler<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>quartz<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context-support<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>写一个要定时执行的类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWordJob</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHi</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            SimpleDateFormat simpleDateFormat = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">            String date = simpleDateFormat.format(<span class="keyword">new</span> Date());</span><br><span class="line">            System.out.println(<span class="string">"hi "</span>+date);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>XML的配置</p>
+<blockquote>
+<p><font size="3" color="green">在spring的配置文件中加入以下代码，其中id=helloWordJob的bean就是你要定时实行的类，其他的不用改</font></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- job --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"helloWordJob"</span> <span class="attr">class</span>=<span class="string">"com.imooc.myo2o.service.impl.HelloWordJob"</span>/&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法--&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- jobDetail --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"jobDetail"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetObject"</span> <span class="attr">ref</span>=<span class="string">"helloWordJob"</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"targetMethod"</span> <span class="attr">value</span>=<span class="string">"sayHi"</span>/&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--false表示等上一个任务执行完后再开启新的任务,这里和上一遍博客中的注解@DisallowConcurrentExecution一个道理--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"concurrent"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- Trigger--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"helloWordJobCronTrigger"</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.CronTriggerFactoryBean"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jobDetail"</span> <span class="attr">ref</span>=<span class="string">"jobDetail"</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"cronExpression"</span> <span class="attr">value</span>=<span class="string">"0/3 * * * * ?"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--Scheduler --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.scheduling.quartz.SchedulerFactoryBean"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"triggers"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"helloWordJobCronTrigger"</span>/&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样启动你的Tomcat就可以看到效果了<br>让目标方法按照自己指定的时间执行，可修改 Trigger的cronExpression，可参考在线Cron表达式生成器：<a href="https://www.pppet.net/" target="_blank" rel="noopener">https://www.pppet.net/</a></p>
 
       
     </div>
@@ -514,7 +502,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>linux</a>
+            <a href="/tags/Quartz/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>Quartz</a>
           
         </div>
       
@@ -527,8 +515,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/对项目中关键的配置信息进行加密.html" rel="next" title="对项目中关键的配置信息进行加密">
-                <i class="fa fa-chevron-left"></i> 对项目中关键的配置信息进行加密
+              <a href="/java如何利用google的zxing生成二维码.html" rel="next" title="java如何利用google的zxing生成二维码，只要两步，超级简单">
+                <i class="fa fa-chevron-left"></i> java如何利用google的zxing生成二维码，只要两步，超级简单
               </a>
             
           </div>
@@ -536,10 +524,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/微信公众号如何授权登录、获取用户信息(openid).html" rel="prev" title="微信公众号如何授权登录、获取用户信息(openid)">
-                微信公众号如何授权登录、获取用户信息(openid) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -617,17 +601,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -719,22 +694,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-编辑shell脚本-备份-amp-清理"><span class="nav-number">1.</span> <span class="nav-text">1. 编辑shell脚本 (备份&amp;清理)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将脚本加入crontab自动执行计划"><span class="nav-number">2.</span> <span class="nav-text">2. 将脚本加入crontab自动执行计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Cron-各项的描述"><span class="nav-number">3.</span> <span class="nav-text">3.  Cron 各项的描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Crontab-示例"><span class="nav-number">4.</span> <span class="nav-text">4.Crontab 示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-crontab常用的命令"><span class="nav-number">5.</span> <span class="nav-text">5. crontab常用的命令</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
