@@ -115,7 +115,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Mysql,">
 
 
 
@@ -126,17 +126,18 @@
 
 
 
-<meta name="description" content="专注于技术分享">
-<meta name="keywords" content="java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="生如夏花">
-<meta property="og:url" content="http://edwardliu.work/tags/Quartz/index.html">
+<meta name="description" content="数据库索引是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。">
+<meta name="keywords" content="Mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql数据库知识点总结02-索引">
+<meta property="og:url" content="http://edwardliu.work/MySql数据库知识点总结02-索引.html">
 <meta property="og:site_name" content="生如夏花">
-<meta property="og:description" content="专注于技术分享">
+<meta property="og:description" content="数据库索引是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-14T04:57:26.010Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生如夏花">
-<meta name="twitter:description" content="专注于技术分享">
+<meta name="twitter:title" content="MySql数据库知识点总结02-索引">
+<meta name="twitter:description" content="数据库索引是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。">
 
 
 
@@ -166,13 +167,13 @@
 
 
 
-  <link rel="canonical" href="http://edwardliu.work/tags/Quartz/">
+  <link rel="canonical" href="http://edwardliu.work/MySql数据库知识点总结02-索引.html">
 
 
 
 
 
-  <title>标签: Quartz | 生如夏花</title>
+  <title>MySql数据库知识点总结02-索引 | 生如夏花</title>
   
 
 
@@ -191,7 +192,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
    <a href="https://github.com/jackliu7" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -309,52 +310,273 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Quartz<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://edwardliu.work/MySql数据库知识点总结02-索引.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Edward Liu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="生如夏花">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Spring+Quartz最简单的HelloWorld入门示例.html" itemprop="url">
-              
-                <span itemprop="name">Spring+Quartz最简单的HelloWorld入门示例</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MySql数据库知识点总结02-索引</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-30T10:55:25+08:00" content="2019-04-30">
-          04-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T12:53:36+08:00">
+                2019-05-14
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>数据库索引是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。<br><a id="more"></a></p>
+<div class="news_infos animated fadeIn"><h4 id="nav1_1" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">索引是什么？</h4><div>&nbsp; &nbsp; &nbsp;数据库索引是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。<br>    <div><h4 id="nav1_2" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">索引原理</h4><div>&nbsp; &nbsp; &nbsp;索引的目的在于提高查询效率，与我们查阅图书所用的目录是一个道理：先定位到章，然后定位到该章下的一个小节，然后找到页数。相似的例子还有：查字典，查火车车次，飞机航班等。</div><h4 id="nav1_3" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">磁盘IO与预读</h4><div>&nbsp; &nbsp; &nbsp;考虑到磁盘IO是非常高昂的操作，计算机操作系统做了一些优化，当一次IO时，不光把当前磁盘地址的数据，而是把相邻的数据也都读取到内存缓冲区内，因为局部预读性原理告诉我们，当计算机访问一个地址的数据的时候，与其相邻的数据也会很快被访问到。每一次IO读取的数据我们称之为一页(page)。具体一页有多大数据跟操作系统有关，一般为4k或8k，也就是我们读取一页内的数据时候，实际上才发生了一次IO，这个理论对于索引的数据结构设计非常有帮助。</div><h4 id="nav1_4" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">索引的两大类型Hash索引和B树索引</h4><div><div>&nbsp; &nbsp; &nbsp;Hash类型的索引：查询单条快，范围查询慢。</div><div>&nbsp; &nbsp; &nbsp;B树类型的索引：b+树，层数越多，数据量指数级增长（我们就用它，因为innodb默认支持它）。</div><div><span style="font-weight: bold;">&nbsp; 不同的存储引擎支持的索引类型也不一样</span></div><div>&nbsp; &nbsp; &nbsp;InnoDB 支持事务，支持行级别锁定，支持 B-tree、Full-text 等索引，不支持 Hash 索引。</div><div>&nbsp; &nbsp; &nbsp;MyISAM 不支持事务，支持表级别锁定，支持 B-tree、Full-text 等索引，不支持 Hash 索引。</div><div>&nbsp; &nbsp; &nbsp;Memory 不支持事务，支持表级别锁定，支持 B-tree、Hash 等索引，不支持 Full-text 索引。</div></div><div><h4 id="nav1_5" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">Hash索引的限制</h4><div>&nbsp; &nbsp; &nbsp;1.由于索引仅包含hash code和记录指针，所以，MySQL不能通过使用索引避免读取记录。但是访问内存中的记录是非常迅速的，不会对性造成太大的影响。</div><div>&nbsp; &nbsp; &nbsp;2.不能使用hash索引排序。</div><div>&nbsp; &nbsp; &nbsp;3.Hash索引不支持键的部分匹配，因为是通过整个索引值来计算hash值的。</div><div>&nbsp; &nbsp; &nbsp;4.Hash索引只支持等值比较，例如使用=，IN( )和&lt;=&gt;。对于WHERE price&gt;100并不能加速查询。</div></div><h4 id="nav1_6" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">索引数据结构为什么采用B+树</h4></div><div><div>&nbsp; &nbsp; &nbsp;为了尽量减少I/O操作，磁盘读取每次都会预读，大小通常为页的整数倍。即使只需要读取一个字节，磁盘也会读取一页的数据(通常为4K)放入内存，内存与磁盘以页为单位交换数据。因为局部性原理认为，通常一个数据被用到，其附近的数据也会立马被用到。</div><div>&nbsp; &nbsp; &nbsp;B树：如果一次检索需要访问4个节点，数据库系统设计者利用磁盘预读原理，把节点的大小设计为一个页，那读取一个节点只需要一次I/O操作，完成这次检索操作，最多需要3次I/O(根节点常驻内存)。数据记录越小，每个节点存放的数据就越多，树的高度也就越小，I/O操作就少了，检索效率也就上去了。</div><div>&nbsp; &nbsp; &nbsp;B+树：非叶子节点只存key，大大滴减少了非叶子节点的大小，那么每个节点就可以存放更多的记录，树更矮了，I/O操作更少了。所以B+Tree拥有更好的性能。</div></div><div><div>&nbsp; &nbsp; &nbsp;由于B+树在内部节点上不包含数据信息，因此在内存页中能够存放更多的key。 数据存放的更加紧密，具有更好的空间局部性。因此访问叶子节点上关联的数据也具有更好的缓存命中率。</div><div>&nbsp; &nbsp; &nbsp;B+树的叶子结点都是相链的，因此对整棵树的便利只需要一次线性遍历叶子结点即可。而且由于数据顺序排列并且相连，所以便于区间查找和搜索。而B树则需要进行每一层的递归遍历。相邻的元素可能在内存中不相邻，所以缓存命中性没有B+树好。</div></div><h4 id="nav1_7" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">索引的优缺点</h4><div>&nbsp;<span style="font-weight: bold;"> &nbsp;优点：</span></div><div><div>&nbsp; &nbsp; &nbsp;1.通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。</div><div>&nbsp; &nbsp; &nbsp;2.可以大大加快数据的检索速度，这也是创建索引的最主要的原因。</div><div>&nbsp; &nbsp; &nbsp;3.可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义。</div><div>&nbsp; &nbsp; &nbsp;4.在使用分组和排序子句进行数据检索时，同样可以显著减少查询中分组和排序的时间。</div><div>&nbsp; &nbsp; &nbsp;5.通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能。</div></div><div>&nbsp;<span style="font-weight: bold;"> &nbsp;缺点：</span></div><div><div>&nbsp; &nbsp; &nbsp;1.创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。</div><div>&nbsp; &nbsp; &nbsp;2.索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立聚簇索引，那么需要的空间就会更大。</div><p>&nbsp; &nbsp; &nbsp;3.当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，这样就降低了数据的维护速度。</p><div>索引是建立在数据库表中的某些列的上面。在创建索引的时候，应该考虑在哪些列上可以创建索引，在哪些列上不能创建索引。</div></div><h4 id="nav1_8" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">哪些字段适合建索引</h4><div><div>&nbsp; &nbsp; &nbsp;1.在经常需要搜索的列上，可以加快搜索的速度；</div><div>&nbsp; &nbsp; &nbsp;2.在作为主键的列上，强制该列的唯一性和组织表中数据的排列结构；</div><div>&nbsp; &nbsp; &nbsp;3.在经常用在连接的列上，这些列主要是一些外键，可以加快连接的速度；</div><div>&nbsp; &nbsp; &nbsp;4.在经常需要根据范围进行搜索的列上创建索引，因为索引已经排序，其指定的范围是连续的；</div><div>&nbsp; &nbsp; &nbsp;5.在经常需要排序的列上创建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；</div><div>&nbsp; &nbsp; &nbsp;6.在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度。</div></div><h4 id="nav1_9" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">哪些字段不适合建索引</h4></div><div><div>&nbsp; &nbsp; &nbsp;1.对于那些在查询中很少使用或者参考的列不应该创建索引。这是因为，既然这些列很少使用到，因此有索引或者无索引，并不能提高查询速度。相反，由于增加了索引，反而降低了系统的维护速度和增大了空间需求。</div><div>&nbsp; &nbsp; &nbsp;2.对于那些只有很少数据值的列也不应该增加索引。这是因为，由于这些列的取值很少，例如人事表的性别列，在查询的结果中，结果集的数据行占了表中数据行的很大比例，即需要在表中搜索的数据行的比例很大。增加索引，并不能明显加快检索速度。</div><div>&nbsp; &nbsp; &nbsp;3.对于那些定义为text, image和bit数据类型的列不应该增加索引。这是因为，这些列的数据量要么相当大，要么取值很少。</div><div>&nbsp; &nbsp; &nbsp;4.当修改性能远远大于检索性能时，不应该创建索引。这是因为，修改性能和检索性能是互相矛盾的。当增加索引时，会提高检索性能，但是会降低修改性能。当减少索引时，会提高修改性能，降低检索性能。因此，当修改性能远远大于检索性能时，不应该创建索引。</div></div><br></div>
 
       
     </div>
+    
+    
+    
 
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat.jpg" alt="Edward Liu wechat" style="width: 200px; max-width: 100%;">
+    <div>扫一扫可以关注我哦</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Edward Liu 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Edward Liu 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mysql/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>Mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/聚集索引与非聚集索引.html" rel="next" title="聚集索引与非聚集索引">
+                <i class="fa fa-chevron-left"></i> 聚集索引与非聚集索引
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/MySQL的InnoDB索引原理详解.html" rel="prev" title="MySQL的InnoDB索引原理详解">
+                MySQL的InnoDB索引原理详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -362,6 +584,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -382,8 +608,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -475,6 +710,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_1"><span class="nav-number">1.</span> <span class="nav-text">索引是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_2"><span class="nav-number">2.</span> <span class="nav-text">索引原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_3"><span class="nav-number">3.</span> <span class="nav-text">磁盘IO与预读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_4"><span class="nav-number">4.</span> <span class="nav-text">索引的两大类型Hash索引和B树索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_5"><span class="nav-number">5.</span> <span class="nav-text">Hash索引的限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_6"><span class="nav-number">6.</span> <span class="nav-text">索引数据结构为什么采用B+树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_7"><span class="nav-number">7.</span> <span class="nav-text">索引的优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_8"><span class="nav-number">8.</span> <span class="nav-text">哪些字段适合建索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_9"><span class="nav-number">9.</span> <span class="nav-text">哪些字段不适合建索引</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -637,6 +888,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
