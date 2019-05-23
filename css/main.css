@@ -1955,7 +1955,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #85ffff;
+  background: #f577ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3299,7 +3299,10 @@ header.post-header {
   }
 }
 body {
-  background: url("/images/bg2.jpg");
+  background: url("/images/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
 .site-meta {
   background: #0684bd;
