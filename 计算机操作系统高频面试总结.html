@@ -1,1281 +1,753 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
 
 
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-<style>
-    .pace .pace-progress {
-        background: #1E92FB; /*进度条颜色*/
-        height: 3px;
+    <meta charset="utf-8">
+    <meta name="keywords" content="计算机操作系统高频面试总结, java">
+    <meta name="description" content="操作系统是编程最重要的基础之一，操作系统相关知识广泛应用在程序设计、系统调优、问题追查、性能优化等重要场景中，一个不懂操作系统的程序员不可能写出优秀的代码，更不可能设计出优秀的系统架构，所以操作系统知识也是面试中不可或缺的一部分，尤其对于基">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>计算机操作系统高频面试总结 | 生如夏花</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">生如夏花</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>主页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">生如夏花</div>
+        <div class="logo-desc">
+            
+            从来没有真正的绝境，只有心灵的迷途
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/jackliu7" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
     }
-    .pace .pace-progress-inner {
-         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
     }
-    .pace .pace-activity {
-        border-top-color: #1E92FB;    /*上边框颜色*/
-        border-left-color: #1E92FB;    /*左边框颜色*/
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
     }
 </style>
-<meta name="theme-color" content="#222">
 
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|14:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="面试,操作系统,">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="操作系统是编程最重要的基础之一，操作系统相关知识广泛应用在程序设计、系统调优、问题追查、性能优化等重要场景中，一个不懂操作系统的程序员不可能写出优秀的代码，更不可能设计出优秀的系统架构，所以操作系统知识也是面试中不可或缺的一部分，尤其对于基础组件开发、系统调优等相关职位。">
-<meta name="keywords" content="面试,操作系统">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计算机操作系统高频面试总结">
-<meta property="og:url" content="http://edwardliu.work/计算机操作系统高频面试总结.html">
-<meta property="og:site_name" content="生如夏花">
-<meta property="og:description" content="操作系统是编程最重要的基础之一，操作系统相关知识广泛应用在程序设计、系统调优、问题追查、性能优化等重要场景中，一个不懂操作系统的程序员不可能写出优秀的代码，更不可能设计出优秀的系统架构，所以操作系统知识也是面试中不可或缺的一部分，尤其对于基础组件开发、系统调优等相关职位。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-23T00:55:35.255Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机操作系统高频面试总结">
-<meta name="twitter:description" content="操作系统是编程最重要的基础之一，操作系统相关知识广泛应用在程序设计、系统调优、问题追查、性能优化等重要场景中，一个不懂操作系统的程序员不可能写出优秀的代码，更不可能设计出优秀的系统架构，所以操作系统知识也是面试中不可或缺的一部分，尤其对于基础组件开发、系统调优等相关职位。">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://edwardliu.work/计算机操作系统高频面试总结.html">
-
-
-
-
-
-  <title>计算机操作系统高频面试总结 | 生如夏花</title>
-  
-
-
-
-
-
-
-
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-   <a href="https://github.com/jackliu7" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">生如夏花</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">EdwardSpace</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+<a href="https://github.com/jackliu7" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
         
-        <li class="menu-item menu-item-主页">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            主页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-标签">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-分类">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
+    </nav>
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
+</header>
 
 
 
-    </div>
-  
-</nav>
 
 
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://edwardliu.work/计算机操作系统高频面试总结.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Edward Liu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="生如夏花">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">计算机操作系统高频面试总结</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T13:27:25+08:00">
-                2019-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3.9k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  13
-                </span>
-              
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        计算机操作系统高频面试总结
+                    </div>
+                </div>
             </div>
-          
-
-          
-
         </div>
-      </header>
-    
+    </div>
+</div>
+
+
+
+<main class="post-container content">
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
 
-      
-      
+    #articleContent :focus {
+        outline: none;
+    }
 
-      
-        <p><font size="3" color="green">操作系统是编程最重要的基础之一，操作系统相关知识广泛应用在程序设计、系统调优、问题追查、性能优化等重要场景中，一个不懂操作系统的程序员不可能写出优秀的代码，更不可能设计出优秀的系统架构，所以操作系统知识也是面试中不可或缺的一部分，尤其对于基础组件开发、系统调优等相关职位。</font><br><a id="more"></a></p>
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/操作系统/" target="_blank">
+                                <span class="chip bg-color">操作系统</span>
+                            </a>
+                        
+                            <a href="/tags/面试/" target="_blank">
+                                <span class="chip bg-color">面试</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/面试/" class="post-category" target="_blank">
+                                面试
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-05-23
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                        3.9k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                        13 Min
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><font size="3" color="green">操作系统是编程最重要的基础之一，操作系统相关知识广泛应用在程序设计、系统调优、问题追查、性能优化等重要场景中，一个不懂操作系统的程序员不可能写出优秀的代码，更不可能设计出优秀的系统架构，所以操作系统知识也是面试中不可或缺的一部分，尤其对于基础组件开发、系统调优等相关职位。</font><br><a id="more"></a></p>
 <div class="news_infos animated fadeIn"><h4 id="nav1_1" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">1.进程和线程的区别</h4><p>&nbsp; &nbsp; &nbsp;1.进程是资源分配的最小单位，线程是程序执行的最小单位。</p><p>&nbsp; &nbsp; &nbsp;2.进程有自己的独立地址空间，每启动一个进程，系统就会为它分配地址空间，建立数据表来维护代码段、堆栈段和数据段，这种操作非常昂贵。而线程是共享进程中的数据的，使用相同的地址空间，因此CPU切换一个线程的花费远比进程要小很多，同时创建一个线程的开销也比进程要小很多。</p><p>&nbsp; &nbsp; &nbsp;3.线程之间的通信更方便，同一进程下的线程共享全局变量、静态变量等数据，而进程之间的通信需要以通信的方式（IPC)进行。不过如何处理好同步与互斥是编写多线程程序的难点。</p><p>&nbsp; &nbsp; &nbsp;4.多进程程序更健壮，多线程程序只要有一个线程死掉，整个进程也死掉了，而一个进程死掉并不会对另外一个进程造成影响，因为进程有自己独立的地址空间。</p><h4 id="nav1_2" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">2.进程通信</h4><p>&nbsp; &nbsp; &nbsp;1.管道：速度慢，容量有限，只有父子进程能通讯 。</p><p>&nbsp; &nbsp; &nbsp;2.FIFO：任何进程间都能通讯，但速度慢 。</p><p>&nbsp; &nbsp; &nbsp;3.消息队列：容量受到系统限制，且要注意第一次读的时候，要考虑上一次没有读完数据的问题。</p><p>&nbsp; &nbsp; &nbsp;4.信号量：不能传递复杂消息，只能用来同步。</p><p>&nbsp; &nbsp; &nbsp;5.共享内存区：能够很容易控制容量，速度快，但要保持同步。</p><p>&nbsp; &nbsp; &nbsp;6.SOCKET</p><h4 id="nav1_3" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">3.进程同步</h4><p>&nbsp; &nbsp; &nbsp;多进程虽然提高了系统资源利用率和吞吐量，但是由于进程的异步性可能造成系统的混乱。进程同步的任务就是对多个相关进程在执行顺序上进行协调，使并发执行的多个进程之间可以有效的共享资源和相互合作，保证程序执行的可再现性。</p><p><span style="font-weight: bold;">&nbsp; &nbsp;同步机制需要遵循的原则：</span></p><p>&nbsp; &nbsp; &nbsp;空闲让进：当没有进程处于临界区的时候，应该许可其他进程进入临界区的申请</p><p>&nbsp; &nbsp; &nbsp;忙则等待：当前如果有进程处于临界区，如果有其他进程申请进入，则必须等待，保证对临界区的互斥访问</p><p>&nbsp; &nbsp; &nbsp;有限等待：对要求访问临界资源的进程，需要在有限时间内进入临界区，防止出现死等</p><p>&nbsp; &nbsp; &nbsp;让权等待：当进程无法进入临界区的时候，需要释放处理机，边陷入忙等</p><h4 id="nav1_4" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">4.操作系统的四个特性</h4><p>&nbsp; &nbsp; &nbsp;1.并发：同一段时间内多个程序执行(注意区别并行和并发，前者是同一时刻的多个事件，后者是同一时间段内的多个事件)。</p><p>&nbsp; &nbsp; &nbsp;2.共享：系统中的资源可以被内存中多个并发执行的进线程共同使用。</p><p>&nbsp; &nbsp; &nbsp;3.虚拟：通过时分复用（如分时系统）以及空分复用（如虚拟内存）技术实现把一个物理实体虚拟为多个。</p><p>&nbsp; &nbsp; &nbsp;4.异步：系统中的进程是以走走停停的方式执行的，且以一种不可预知的速度推进。</p><h4 id="nav1_5" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">5.死锁</h4><p>&nbsp; &nbsp; &nbsp;死锁是指多个进程在运行过程中，因为争夺资源而造成的一种僵局，如果没有外力推进，处于僵局中的进程就无法继续执行。</p><p><span style="font-weight: bold;">&nbsp; &nbsp;死锁原因：</span></p><p>&nbsp; &nbsp; &nbsp;1.竞争资源：请求同一有限资源的进程数多于可用资源数</p><p>&nbsp; &nbsp; &nbsp;2.进程推进顺序非法：进程执行中，请求和释放资源顺序不合理，如资源等待链</p><p><span style="font-weight: bold;">&nbsp; &nbsp;死锁产生的必要条件：</span></p><p>&nbsp; &nbsp; &nbsp;1.互斥条件:进程对所分配的资源进行排他性的使用</p><p>&nbsp; &nbsp; &nbsp;2.请求和保持条件：进程被阻塞的时候并不释放锁申请到的资源</p><p>&nbsp; &nbsp; &nbsp;3.不可剥夺条件：进程对于已经申请到的资源在使用完成之前不可以被剥夺</p><p>&nbsp; &nbsp; &nbsp;4.循环等待条件：发生死锁的时候存在的一个 进程-资源 环形等待链</p><h4 id="nav1_6" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">6.死锁和活锁的区别</h4><p>&nbsp; &nbsp; &nbsp;活锁和死锁类似，不同之处在于处于活锁的线程或进程的状态是不断改变的，活锁可以认为是一种特殊的饥饿。</p><p>&nbsp; &nbsp; &nbsp;一个现实的活锁例子是两个人在狭小的走廊碰到，两个人都试着避让对方好让彼此通过，但是因为避让的方向都一样导致最后谁都不能通过走廊。</p><p>&nbsp; &nbsp; &nbsp;简单的说就是，活锁和死锁的主要区别是前者进程的状态可以改变但是却不能继续执行。</p><h4 id="nav1_7" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">7.进程调度算法</h4><p>&nbsp; &nbsp; &nbsp;1.FCFS(先来先服务，队列实现，非抢占的)：先请求CPU的进程先分配到CPU。</p><p>&nbsp; &nbsp; &nbsp;2.SJF(最短作业优先调度算法)：平均等待时间最短，但难以知道下一个CPU区间长度。</p><p>&nbsp; &nbsp; &nbsp;3.优先级调度算法(可以是抢占的，也可以是非抢占的)：优先级越高越先分配到CPU，相同优先级先到先服务，存在的主要问题是：低优先级进程无穷等待CPU，会导致无穷阻塞或饥饿；解决方案：老化。</p><p>&nbsp; &nbsp; &nbsp;4.时间片轮转调度算法(可抢占的)：队列中没有进程被分配超过一个时间片的CPU时间，除非它是唯一可运行的进程。如果进程的CPU区间超过了一个时间片，那么该进程就被抢占并放回就绪队列。</p><p>&nbsp; &nbsp; &nbsp;5.多级队列调度算法：将就绪队列分成多个独立的队列，每个队列都有自己的调度算法，队列之间采用固定优先级抢占调度。其中，一个进程根据自身属性被永久地分配到一个队列中。</p><p>&nbsp; &nbsp; &nbsp;6.多级反馈队列调度算法：与多级队列调度算法相比，其允许进程在队列之间移动：若进程使用过多CPU时间，那么它会被转移到更低的优先级队列；在较低优先级队列等待时间过长的进程会被转移到更高优先级队列，以防止饥饿发生。</p><h4 id="nav1_8" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">8.页面置换算法</h4><p>&nbsp; &nbsp; &nbsp;FIFO先进先出算法：在操作系统中经常被用到，比如作业调度（主要实现简单，很容易想到）。</p><p>&nbsp; &nbsp; &nbsp;LRU（Least recently use）最近最少使用算法：根据使用时间到现在的长短来判断。</p><p>&nbsp; &nbsp; &nbsp;LFU（Least frequently use）最少使用次数算法：根据使用次数来判断。</p><p>&nbsp; &nbsp; &nbsp;OPT（Optimal replacement）最优置换算法：理论的最优，理论；就是要保证置换出去的是不再被使用的页，或者是在实际内存中最晚使用的算法。</p><h4 id="nav1_9" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">9.虚拟内存</h4><p>&nbsp; &nbsp; &nbsp;如果存在一个程序，所需内存空间超过了计算机可以提供的实际内存，那么由于该程序无法装入内存所以也就无法运行。单纯的增加物理内存只能解决一部分问题，但是仍然会出现无法装入单个或者无法同时装入多个程序的问题。但是可以从逻辑的角度扩充内存容量，即可解决上述两种问题。</p><p>&nbsp; &nbsp; &nbsp;基于局部性原理，在程序装入时，可以将程序的一部分装入内存，而将其余部分留在外存，就可以启动程序执行。在程序执行过程中，当所访问的信息不在内存时，由操作系统将所需要的部分调入内存,然后继续执行程序。另一方面，操作系统将内存中暂时不使用的内容换出到外存上，从而腾出空间存放将要调入内存的信息。这样，系统好像为用户提供了一个比实际内存大得多的存储器，称为虚拟存储器。</p><h4 id="nav1_10" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">10.什么是临界区？如何解决冲突？</h4><p>&nbsp; &nbsp; &nbsp;每个进程中访问临界资源的那段程序称为临界区，每次只准许一个进程进入临界区，进入后不允许其他进程进入。</p><p>&nbsp; &nbsp; &nbsp;1.如果有若干进程要求进入空闲的临界区，一次仅允许一个进程进入；</p><p>&nbsp; &nbsp; &nbsp;2.任何时候，处于临界区内的进程不可多于一个。如已有进程进入自己的临界区，则其它所有试图进入临界区的进程必须等待；</p><p>&nbsp; &nbsp; &nbsp;3.进入临界区的进程要在有限时间内退出，以便其它进程能及时进入自己的临界区；</p><p>&nbsp; &nbsp; &nbsp;4.如果进程不能进入自己的临界区，则应让出CPU，避免进程出现“忙等”现象。</p><h4 id="nav1_11" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">11.分段和分页的区别</h4><p>&nbsp; &nbsp; &nbsp;页是信息的物理单位；分页仅仅是由于系统管理的需要，而不是用户的需要。</p><p>&nbsp; &nbsp; &nbsp;段是信息的逻辑单位；分段的目的是为了能更好地满足用户的需要。</p><p>&nbsp; &nbsp; &nbsp;页的大小固定且由系统确定；段的长度却不固定，决定于用户所编写的程序。</p><h4 id="nav1_12" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">12.对称加密与非对称加密</h4><p>&nbsp; &nbsp; &nbsp;对称加密：加密和解密用的是同一个密钥, 加密方法有AES,DES,RC4,BlowFish等。</p><p>&nbsp; &nbsp; &nbsp;非对称加密：在加密和解密时, 用的是不同的密钥, 分别称为公钥或私钥. 非对称加密的加密方法有RSA, DSA等。</p><p>&nbsp; &nbsp; &nbsp;证书：证书则用来证明自己的身份. 一般来说,证书中包含自己的公钥以及额外的信息,如签发机构(CA)和有效时间等。</p><h4 id="nav1_13" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">13.计算机为什么用补码</h4><p>&nbsp; &nbsp; &nbsp;1. 使符号位能与有效值部分一起参加运算,从而简化运算规则。</p><p>&nbsp; &nbsp; &nbsp;2. 使减法运算转换为加法运算。</p><h4 id="nav1_14" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">14.计算机的存储结构</h4><p>&nbsp; &nbsp; &nbsp;1. 寄存器：用来暂存指令、数据和地址。加快直接同内存读取指令和读写数据的速度。</p><p>&nbsp; &nbsp; &nbsp;2. 高速缓冲存储器：CPU向内存读取数据时，首先查询缓存区是否有对应数据，如果有则直接读取，没有再从内存中读取。高速缓存中存储的都是内存中的数据。</p><p>&nbsp; &nbsp; &nbsp;3. 内存：用于存储指令，运行中的各个静态，动态，临时变量，外部文件的指针。</p><p>&nbsp; &nbsp; &nbsp;4. 硬盘：存储需要永久存储的文件。</p><p>&nbsp; &nbsp; &nbsp;5. 其他存储器(光盘，U盘)。</p><h4 id="nav1_15" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">15.虚拟内存和物理内存的区别</h4><p>&nbsp; &nbsp; &nbsp;虚拟内存(硬盘)是进程运行时所有内存空间的总和，并且可能有一部分不在物理内存中。</p><p>&nbsp; &nbsp; &nbsp;物理内存(内存条)就是我们平时所了解的内存条。</p><p>&nbsp; &nbsp; &nbsp;当运行程序过多，物理内存不够用时，系统会将一部分硬盘空间当内存使用，这部分空间就是虚拟内存。</p><h4 id="nav1_16" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">16.物理地址和虚拟地址</h4><p>&nbsp; &nbsp; &nbsp;物理地址：CPU地址总线传来的地址。</p><p>&nbsp; &nbsp; &nbsp;虚拟地址：从CPU到MMU（Memory Management Unit）的地址称为虚拟地址。</p><h4 id="nav1_17" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">17.孤儿进程和僵尸进程</h4><p>&nbsp; &nbsp; &nbsp;孤儿进程：父进程先退出,子进程还没退出，那么子进程将被托孤给init进程,这里子进程的父进程就是init进程(1号进程)。</p><p>&nbsp; &nbsp; &nbsp;僵尸进程：一个进程已经终止了,但是其父进程还没有获取其状态,那么这个进程就称之为僵尸进程。</p><h4 id="nav1_18" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">18.进程地址空间</h4><p>&nbsp; &nbsp; &nbsp;text数据段（代码段）、data数据段(初始化数据)、BSS数据段(未初始化数据)、堆、栈和内存映射。</p><h4 id="nav1_19" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">19.mmap内存映射原理</h4><p>&nbsp; &nbsp; &nbsp;1. 进程启动映射过程，并在虚拟地址空间中为映射创建虚拟映射区域（调用用户空间库函数mmap）。</p><p>&nbsp; &nbsp; &nbsp;2. 调用内核空间的系统调用函数mmap，实现文件物理地址和进程虚拟地址的——映射关系。</p><p>&nbsp; &nbsp; &nbsp;3. 进程发起对这片映射空间的访问，引发缺页异常，实现文件内容到物理内存（主存）的拷贝。</p><p><span style="font-weight: bold;">&nbsp; &nbsp;注意：</span></p><p>&nbsp; &nbsp; &nbsp;1. 前两个阶段仅在于创建虚拟区间并完成地址映射，但是并没有将任何文件数据的拷贝至主存。真正的文件读取是当进程发起读或写操作时。</p><p>&nbsp; &nbsp; &nbsp;2. 修改过的脏页面并不会立即更新回文件中，而是有一段时间的延迟，可以调用msync()来强制同步, 这样所写的内容就能立即保存到文件里了。</p><h4 id="nav1_20" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">20.mmap和普通文件操作的区别</h4><p>&nbsp; &nbsp; &nbsp;常规文件操作需要从磁盘到页缓存再到用户主存的两次数据拷贝。而mmap操控文件，只需要从磁盘到用户主存的一次数据拷贝过程。说白了，mmap的关键点是实现了用户空间和内核空间的数据直接交互而省去了空间不同数据不通的繁琐过程。因此mmap效率更高。</p><h4 id="nav1_21" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">21.操作系统创建一个新进程的主要步骤</h4><p>&nbsp; &nbsp; &nbsp;1. 申请空白PCB（进程控制块）。</p><p>&nbsp; &nbsp; &nbsp;2. 为新进程分派资源。</p><p>&nbsp; &nbsp; &nbsp;3. 初始化PCB。</p><p>&nbsp; &nbsp; &nbsp;4. 将新进程插入就绪队列。</p><h4 id="nav1_22" style="border-left: 5px solid rgb(255, 146, 111); background-color: rgb(246, 246, 246); padding: 7px 20px; margin: 12px 0px;">22.<strong>加粗样式</strong>多线程上下文切换</h4><p>&nbsp; &nbsp; &nbsp;CPU通过时间片分配算法来循环执行任务，当前任务执行一个时间片后会切换到下一个任务。但是，在切换前会保存上一个任务的状态，以便下次切换回这个任务时，可以再次加载这个任务的状态，从任务保存到再加载的过程就是一次上下文切换。</p></div>
 
-      
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
     </div>
-    
-    
-    
 
     
-      <div>
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/wechat.jpg" alt="Edward Liu wechat" style="width: 200px; max-width: 100%;">
-    <div>扫一扫可以关注我哦</div>
-</div>
 
-      </div>
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.png" alt="Edward Liu 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="Edward Liu 支付宝">
-        <p>支付宝</p>
-      </div>
     
 
     
 
-  </div>
-</div>
-
-      </div>
     
 
     
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/面试/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>面试</a>
-          
-            <a href="/tags/操作系统/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i>操作系统</a>
-          
-        </div>
-      
+    
 
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Jvm 知识点总览.html" rel="next" title="Jvm 知识点总览">
-                <i class="fa fa-chevron-left"></i> Jvm 知识点总览
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/vim编辑器常用的操作.html" rel="prev" title="vim编辑器常用的操作">
-                vim编辑器常用的操作 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微博</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
-
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript">
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Edward Liu">
-            
-              <p class="site-author-name" itemprop="name">Edward Liu</p>
-              <p class="site-description motion-element" itemprop="description">专注于技术分享</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives">
-              
-                  <span class="site-state-item-count">21</span>
-                  <span class="site-state-item-name">日志</span>
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/vim编辑器常用的操作.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="vim编辑器常用的操作">
+                        
+                        <span class="card-title">vim编辑器常用的操作</span>
+                    </div>
                 </a>
-              </div>
-            
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+Linux的命令行界面下面有非常多的文本编辑器。比如经常听说的就有Emacs、pico、nano、joe与vim等。vim也是许多linux自带的编辑器，想要玩好linux，vim一定是要熟练使用的，利用好vim会让我们事半功倍
 
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-            <div class="links-of-author motion-element">
+vi的
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/jackliu7" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:liudazh@foxmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/" target="_blank">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/vim/" target="_blank">
+                        <span class="chip bg-color">vim</span>
+                    </a>
+                    
+                </div>
                 
             </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://blog.csdn.net/victoyr" title="CSDN" target="_blank">CSDN</a>
-                  </li>
-                
-              </ul>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
-          
-
-          
-
+            <div class="card">
+                <a href="/Jvm 知识点总览.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Jvm 知识点总览">
+                        
+                        <span class="card-title">Jvm 知识点总览</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文主要对Jvm的知识的做一个简单的梳理0.jvm 总体梳理jvm体系总体分四大块：  类的加载机制  jvm内存结构  GC算法 垃圾回收  GC分析 命令调优1.类的加载机制主要关注点：  什么是类的加载  类的生命周期  类加载器  
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/jvm/" target="_blank">
+                        <span class="chip bg-color">jvm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
         </div>
-      </section>
+        
+    </div>
+</article>
+</div>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
 
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_1"><span class="nav-number">1.</span> <span class="nav-text">1.进程和线程的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_2"><span class="nav-number">2.</span> <span class="nav-text">2.进程通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_3"><span class="nav-number">3.</span> <span class="nav-text">3.进程同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_4"><span class="nav-number">4.</span> <span class="nav-text">4.操作系统的四个特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_5"><span class="nav-number">5.</span> <span class="nav-text">5.死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_6"><span class="nav-number">6.</span> <span class="nav-text">6.死锁和活锁的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_7"><span class="nav-number">7.</span> <span class="nav-text">7.进程调度算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_8"><span class="nav-number">8.</span> <span class="nav-text">8.页面置换算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_9"><span class="nav-number">9.</span> <span class="nav-text">9.虚拟内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_10"><span class="nav-number">10.</span> <span class="nav-text">10.什么是临界区？如何解决冲突？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_11"><span class="nav-number">11.</span> <span class="nav-text">11.分段和分页的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_12"><span class="nav-number">12.</span> <span class="nav-text">12.对称加密与非对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_13"><span class="nav-number">13.</span> <span class="nav-text">13.计算机为什么用补码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_14"><span class="nav-number">14.</span> <span class="nav-text">14.计算机的存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_15"><span class="nav-number">15.</span> <span class="nav-text">15.虚拟内存和物理内存的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_16"><span class="nav-number">16.</span> <span class="nav-text">16.物理地址和虚拟地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_17"><span class="nav-number">17.</span> <span class="nav-text">17.孤儿进程和僵尸进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_18"><span class="nav-number">18.</span> <span class="nav-text">18.进程地址空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_19"><span class="nav-number">19.</span> <span class="nav-text">19.mmap内存映射原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_20"><span class="nav-number">20.</span> <span class="nav-text">20.mmap和普通文件操作的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_21"><span class="nav-number">21.</span> <span class="nav-text">21.操作系统创建一个新进程的主要步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nav1_22"><span class="nav-number">22.</span> <span class="nav-text">22.加粗样式多线程上下文切换</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
 
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Edward Liu</span>
-
-  
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
 </div>
-<!--
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
- 
+<!-- TOC 悬浮按钮. -->
 
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
- -->
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      本站访问人数 <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人次
-    </span>
-  
-
-  
-    <span class="site-pv">
-      本站总访问量 <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
-  
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
 </div>
 
 
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
             } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
+                $tocWidget.removeClass('toc-fixed');
             }
-          }
+        });
 
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
 
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
 
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
     });
+</script>
+    
 
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
+</main>
 
 
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/jackliu7" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
 
 
 
-  
+    <a href="mailto:liudazh@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
 
-  
 
-  
 
-  
-  
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2263132654" class="tooltipped" data-tooltip="QQ联系我: 2263132654" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
 
-  
 
-  
+</div>
+    </div>
+</footer>
 
-  
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
 
 </body>
-
-
 </html>
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/click.js"></script>
