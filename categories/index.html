@@ -96,7 +96,7 @@
     
     <li>
         <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
 </ul>
@@ -269,7 +269,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;Post Categories
+                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
             </div>
             <div class="tag-chips">
                 
@@ -283,18 +283,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/categories/编程杂记/" title="编程杂记: 3">
+                <a href="/categories/java/" title="java: 5">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #F5EEF8;">编程杂记
-                        <span class="tag-length">3</span>
+                             chip-default " style="background-color: #F5EEF8;">java
+                        <span class="tag-length">5</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/java/" title="java: 5">
+                <a href="/categories/编程杂记/" title="编程杂记: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #D5F5E3;">java
-                        <span class="tag-length">5</span>
+                             chip-default " style="background-color: #D5F5E3;">编程杂记
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -323,18 +323,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/categories/计算机网络基础/" title="计算机网络基础: 2">
+                <a href="/categories/linux/" title="linux: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #82E0AA;">计算机网络基础
-                        <span class="tag-length">2</span>
+                             chip-default " style="background-color: #82E0AA;">linux
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/linux/" title="linux: 1">
+                <a href="/categories/计算机网络基础/" title="计算机网络基础: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #D7BDE2;">linux
-                        <span class="tag-length">1</span>
+                             chip-default " style="background-color: #D7BDE2;">计算机网络基础
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -375,7 +375,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     let option = {
         title: {
             left: 'center',
-            text: 'Post Categories Radar Chart',
+            text: '文章分类雷达图',
             textStyle: {
                 fontWeight: 500,
                 fontSize: 22
@@ -388,7 +388,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"数据库","max":6},{"name":"编程杂记","max":6},{"name":"java","max":6},{"name":"Linux","max":6},{"name":"WEB开发","max":6},{"name":"tomcat","max":6},{"name":"计算机网络基础","max":6},{"name":"linux","max":6},{"name":"面试","max":6}],
+            indicator: [{"name":"数据库","max":6},{"name":"java","max":6},{"name":"编程杂记","max":6},{"name":"Linux","max":6},{"name":"WEB开发","max":6},{"name":"tomcat","max":6},{"name":"linux","max":6},{"name":"计算机网络基础","max":6},{"name":"面试","max":6}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -399,8 +399,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [4,3,5,1,4,1,2,1,2],
-                    name : 'Number of Categories'
+                    value : [4,5,3,1,4,1,1,2,2],
+                    name : '文章分类数量'
                 }
             ]
         }]
@@ -446,6 +446,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     </a>
 
 
+<a href="https://blog.csdn.net/victoyr" class="tooltipped" target="_blank" data-tooltip="访问我的CSDN" data-position="top" data-delay="50">
+    <i class="fa fa-linkedin"></i>
+</a>
+
 
     <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2263132654" class="tooltipped" data-tooltip="QQ联系我: 2263132654" data-position="top" data-delay="50">
         <i class="fa fa-qq"></i>
@@ -463,8 +467,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
