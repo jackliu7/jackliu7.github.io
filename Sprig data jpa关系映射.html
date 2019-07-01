@@ -4,11 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="spring-boot 2.1.3配置Druid数据源, java">
-    <meta name="description" content="1.在pom文件添加依赖
- &amp;lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --&gt;
-        &amp;lt;dependency&gt;
-            &amp;lt;g">
+    <meta name="keywords" content="Sprig data jpa关系映射, java">
+    <meta name="description" content="一、 单向一对一@OneToOneManager.java
+package com.edward.springdata.bean;
+
+import javax.persistence.*;
+
+@Entity
+public class Man">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>spring-boot 2.1.3配置Druid数据源 | 生如夏花</title>
+    <title>Sprig data jpa关系映射 | 生如夏花</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -242,13 +245,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        spring-boot 2.1.3配置Druid数据源
+                        Sprig data jpa关系映射
                     </div>
                 </div>
             </div>
@@ -359,12 +362,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring-Boot/" target="_blank">
-                                <span class="chip bg-color">Spring-Boot</span>
-                            </a>
-                        
-                            <a href="/tags/java/" target="_blank">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/spring/" target="_blank">
+                                <span class="chip bg-color">spring</span>
                             </a>
                         
                     </div>
@@ -387,21 +386,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-23
+                    2019-03-04
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        458
+                        668
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -417,111 +416,132 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.在pom文件添加依赖</p>
-<pre class=" language-xml"><code class="language-xml"> <span class="token comment" spellcheck="true">&lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>druid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.1.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j 
-        yml配置文件中filters: stat,wall,log4j所以要加此依赖，否侧会报错--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>log4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>log4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.2.17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
-<a id="more"></a>
-<p>2.在配置文件中配置数据库信息</p>
-<pre class=" language-yml"><code class="language-yml">spring:
-  datasource:
-#   数据源基本配置
-    username: root
-    password: 123456abcd
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    #注意要配置serverTimezone等信息
-    url: jdbc:mysql://localhost:3306/books?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
-    type: com.alibaba.druid.pool.DruidDataSource
-#   数据源其他配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters: stat,wall,log4j
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-</code></pre>
-<p>3.添加Druid的配置类</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>edward<span class="token punctuation">.</span>springbootmybaties<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+                <h2 id="一、-单向一对一-OneToOne"><a href="#一、-单向一对一-OneToOne" class="headerlink" title="一、 单向一对一@OneToOne"></a>一、 单向一对一@OneToOne</h2><p>Manager.java</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>edward<span class="token punctuation">.</span>springdata<span class="token punctuation">.</span>bean<span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>DruidDataSource<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span>StatViewServlet<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span>WebStatFilter<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>context<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>ConfigurationProperties<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>FilterRegistrationBean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletRegistrationBean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
 
-<span class="token keyword">import</span> javax<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>DataSource<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashMap<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
+<span class="token annotation punctuation">@Entity</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Manager</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> String mangerName<span class="token punctuation">;</span>
 
-<span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DruidConfig</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token comment" spellcheck="true">//这样yml配置文件才会起作用，和Druid类绑定起来</span>
-    <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"spring.datasource"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> DataSource <span class="token function">druid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DruidDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//配置Druid的监控</span>
-    <span class="token comment" spellcheck="true">//1、配置一个管理后台的Servlet</span>
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> ServletRegistrationBean <span class="token function">statViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        ServletRegistrationBean bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServletRegistrationBean</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StatViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> initParams <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"loginUsername"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"loginPassword"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"allow"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//默认就是允许所有访问</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"deny"</span><span class="token punctuation">,</span><span class="token string">"192.168.15.21"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        bean<span class="token punctuation">.</span><span class="token function">setInitParameters</span><span class="token punctuation">(</span>initParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//2、配置一个web监控的filter</span>
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> FilterRegistrationBean <span class="token function">webStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        FilterRegistrationBean bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FilterRegistrationBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        bean<span class="token punctuation">.</span><span class="token function">setFilter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WebStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> initParams <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"exclusions"</span><span class="token punctuation">,</span><span class="token string">"*.js,*.css,/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        bean<span class="token punctuation">.</span><span class="token function">setInitParameters</span><span class="token punctuation">(</span>initParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        bean<span class="token punctuation">.</span><span class="token function">setUrlPatterns</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"/*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">return</span>  bean<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@OneToOne</span><span class="token punctuation">(</span>cascade<span class="token operator">=</span>CascadeType<span class="token punctuation">.</span>ALL<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"department_id"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Department department<span class="token punctuation">;</span>
 
 <span class="token punctuation">}</span>
 
 </code></pre>
+<p>Department.java</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>edward<span class="token punctuation">.</span>springdata<span class="token punctuation">.</span>bean<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Entity</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Department</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> String deptName<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>生成的表<br>department表<br><img src="https://img-blog.csdnimg.cn/20190304170659807.png" alt="deparment"><br>manager表<br><img src="https://img-blog.csdnimg.cn/20190304170757617.png" alt="在这里插入图片描述"><br>生成的外键<br><img src="https://img-blog.csdnimg.cn/20190304171135828.png" alt="在这里插入图片描述"></p>
+<h2 id="二、-双向一对一-OneToOne"><a href="#二、-双向一对一-OneToOne" class="headerlink" title="二、 双向一对一@OneToOne"></a>二、 双向一对一@OneToOne</h2><p>基于外键的 1-1 关联关系：在双向的一对一关联中，需要在<strong>关系被维护端</strong>(inverse side)中的 @OneToOne 注释中指定 mappedBy，以指定是这一关联中的被维护端。同时需要在<strong>关系维护端</strong>(owner side)建立外键列指向关系被维护端的主键列。</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@OneToOne</span><span class="token punctuation">(</span>cascade<span class="token operator">=</span>CascadeType<span class="token punctuation">.</span>ALL<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"department_id"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Department department<span class="token punctuation">;</span>
+
+
+ <span class="token annotation punctuation">@OneToOne</span><span class="token punctuation">(</span>mappedBy <span class="token operator">=</span> <span class="token string">"department"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Manager manager<span class="token punctuation">;</span>
+
+</code></pre>
+<h2 id="三、-OneToMany-和-ManyToOne"><a href="#三、-OneToMany-和-ManyToOne" class="headerlink" title="三、@OneToMany 和 @ManyToOne"></a>三、@OneToMany 和 @ManyToOne</h2><p>双向一对多关系中，必须存在一个关系维护端，在 JPA 规范中，要求  many 的一方作为关系的维护端(owner side), one 的一方作为被维护端(inverse side)。<br>可以在 one 方指定 @OneToMany 注释并设置 mappedBy 属性，以指定它是这一关联中的被维护端，many 为维护端。<br>在 many 方指定 @ManyToOne 注释，并使用 @JoinColumn 指定外键名称</p>
+<p>Customer.java</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Entity</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Customer</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> String lastName<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> String email<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> Date createdTime<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> Date birth<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@OneToMany</span><span class="token punctuation">(</span>mappedBy<span class="token operator">=</span><span class="token string">"customer"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Set<span class="token operator">&lt;</span>Order<span class="token operator">></span> orders <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p><strong><em>这里特别的坑order是mysql的关键字，所以order不能拿来做表名</em></strong><br>Order.java</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"ORDERS"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Entity</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Order</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> String orderName<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"customer_id"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ManyToOne</span><span class="token punctuation">(</span>fetch<span class="token operator">=</span>FetchType<span class="token punctuation">.</span>LAZY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Customer customer<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>生成的表<br>customer表<br><img src="https://img-blog.csdnimg.cn/20190304221809495.png" alt="在这里插入图片描述"></p>
+<p>order表<br><img src="https://img-blog.csdnimg.cn/20190304221845498.png" alt="在这里插入图片描述"><br>外键<br><img src="https://img-blog.csdnimg.cn/20190304221915499.png" alt="在这里插入图片描述"></p>
+<h2 id="四、多对多关联关系"><a href="#四、多对多关联关系" class="headerlink" title="四、多对多关联关系"></a>四、多对多关联关系</h2><p>在双向多对多关系中，我们必须指定一个关系维护端(owner side),可以通过 @ManyToMany 注释中指定 mappedBy 属性来标识其为关系维护端。</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"JPA_ITEMS"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Entity</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> String itemName<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//使用 @ManyToMany 注解来映射多对多关联关系</span>
+    <span class="token comment" spellcheck="true">//使用 @JoinTable 来映射中间表</span>
+    <span class="token comment" spellcheck="true">//1. name 指向中间表的名字</span>
+    <span class="token comment" spellcheck="true">//2. joinColumns 映射当前类所在的表在中间表中的外键</span>
+    <span class="token comment" spellcheck="true">//2.1 name 指定外键列的列名</span>
+    <span class="token comment" spellcheck="true">//2.2 referencedColumnName 指定外键列关联当前表的哪一列 也可以不写，默认是当前表的主键</span>
+    <span class="token comment" spellcheck="true">//3. inverseJoinColumns 映射关联的类所在中间表的外键</span>
+    <span class="token annotation punctuation">@JoinTable</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"ITEM_CATEGORY"</span><span class="token punctuation">,</span>
+            joinColumns<span class="token operator">=</span><span class="token punctuation">{</span><span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"item_id"</span><span class="token punctuation">,</span> referencedColumnName<span class="token operator">=</span><span class="token string">"ID"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+            inverseJoinColumns<span class="token operator">=</span><span class="token punctuation">{</span><span class="token annotation punctuation">@JoinColumn</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"category_id"</span><span class="token punctuation">,</span> referencedColumnName<span class="token operator">=</span><span class="token string">"ID"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ManyToMany</span>
+    <span class="token keyword">private</span> Set<span class="token operator">&lt;</span>Category<span class="token operator">></span> categories <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"JPA_CATEGORIES"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Entity</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Category</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Id</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>
+    <span class="token keyword">private</span> String categoryName<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@ManyToMany</span><span class="token punctuation">(</span>mappedBy<span class="token operator">=</span><span class="token string">"categories"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> Set<span class="token operator">&lt;</span>Item<span class="token operator">></span> items <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>生成的表<br>item表<br><img src="https://img-blog.csdnimg.cn/20190304221957204.png" alt="在这里插入图片描述"></p>
+<p>category表<br><img src="https://img-blog.csdnimg.cn/20190304222038253.png" alt="在这里插入图片描述"><br>中间表item_category<br><img src="https://img-blog.csdnimg.cn/20190304222155655.png" alt="在这里插入图片描述"><br>外键<br><img src="https://img-blog.csdnimg.cn/20190304222257163.png" alt="在这里插入图片描述"><br>参考文章：<a href="https://blog.csdn.net/johnf_nash/article/details/80642581" target="_blank" rel="noopener">https://blog.csdn.net/johnf_nash/article/details/80642581</a></p>
 
             </div>
             <hr>
@@ -563,29 +583,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/对项目中关键的配置信息进行加密.html">
+                <a href="/MongoDB文件服务器搭建.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="对项目中关键的配置信息进行加密">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="MongoDB文件服务器搭建">
                         
-                        <span class="card-title">对项目中关键的配置信息进行加密</span>
+                        <span class="card-title">MongoDB文件服务器搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-我们在搭键一个项目的时候，有一些信息，比如数据库的连接信息通常会放在一个配置文件中，存放的是明码，我们可以对关键信息比如用户名和密码进行加密，就算别人获取了也没有用
-
-加密后的效果
-db.username = WnplV/ietfQ=
-d
+                            一、环境准备&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-12
                         </span>
                         <span class="publish-author">
                             
@@ -602,12 +618,8 @@ d
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ssm/" target="_blank">
-                        <span class="chip bg-color">ssm</span>
-                    </a>
-                    
-                    <a href="/tags/spring/" target="_blank">
-                        <span class="chip bg-color">spring</span>
+                    <a href="/tags/MongoDB/" target="_blank">
+                        <span class="chip bg-color">MongoDB</span>
                     </a>
                     
                 </div>
@@ -621,24 +633,27 @@ d
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/SSM整合逐层配置.html">
+                <a href="/spring-boot 2.1.3整合Mybatis.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="SSM整合逐层配置">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="spring-boot 2.1.3整合Mybatis">
                         
-                        <span class="card-title">SSM整合逐层配置</span>
+                        <span class="card-title">spring-boot 2.1.3整合Mybatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用SSM（Spring、SpringMVC和Mybatis）已经有三个多月了，项目在技术上已经没有什么难点了，基于现有的技术就可以实现想要的功能，当然肯定有很多可以改进的地方。之前没有记录SSM整合的过程，这次刚刚好基于自己的一个小项目重
+                            一、注解版1.添加依赖
+&lt;dependency>
+   &lt;groupId>org.mybatis.spring.boot&lt;/groupId>
+    &lt;artifactId>mybatis-spring-boot-s
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-03
                             </span>
                         <span class="publish-author">
                             
@@ -655,12 +670,12 @@ d
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SSM/" target="_blank">
-                        <span class="chip bg-color">SSM</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring-Boot</span>
                     </a>
                     
-                    <a href="/tags/前端/" target="_blank">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/Mybaties/" target="_blank">
+                        <span class="chip bg-color">Mybaties</span>
                     </a>
                     
                 </div>
