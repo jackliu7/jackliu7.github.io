@@ -4,11 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="spring-boot 2.1.3配置Druid数据源, java">
-    <meta name="description" content="1.在pom文件添加依赖
- &amp;lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --&gt;
-        &amp;lt;dependency&gt;
-            &amp;lt;g">
+    <meta name="keywords" content="如何上传项目到github, java">
+    <meta name="description" content="
+在github上创建一个仓库
+打开git软件3.进入项目的目录在windows资源管理器中右击Git Bash Here直接进入
+
+第一步： 输入git init，输入后 项目文件夹下多了一个.git文件第二步：输入git add .，a">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>spring-boot 2.1.3配置Druid数据源 | 生如夏花</title>
+    <title>如何上传项目到github | 生如夏花</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -242,13 +243,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        spring-boot 2.1.3配置Druid数据源
+                        如何上传项目到github
                     </div>
                 </div>
             </div>
@@ -359,12 +360,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spring-Boot/" target="_blank">
-                                <span class="chip bg-color">Spring-Boot</span>
-                            </a>
-                        
-                            <a href="/tags/java/" target="_blank">
-                                <span class="chip bg-color">java</span>
+                            <a href="/tags/github/" target="_blank">
+                                <span class="chip bg-color">github</span>
                             </a>
                         
                     </div>
@@ -387,21 +384,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-23
+                    2019-03-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        458
+                        201
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -417,111 +414,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.在pom文件添加依赖</p>
-<pre class=" language-xml"><code class="language-xml"> <span class="token comment" spellcheck="true">&lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>druid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.1.10<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-        <span class="token comment" spellcheck="true">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j 
-        yml配置文件中filters: stat,wall,log4j所以要加此依赖，否侧会报错--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>log4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>log4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.2.17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-</code></pre>
-<a id="more"></a>
-<p>2.在配置文件中配置数据库信息</p>
-<pre class=" language-yml"><code class="language-yml">spring:
-  datasource:
-#   数据源基本配置
-    username: root
-    password: 123456abcd
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    #注意要配置serverTimezone等信息
-    url: jdbc:mysql://localhost:3306/books?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
-    type: com.alibaba.druid.pool.DruidDataSource
-#   数据源其他配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters: stat,wall,log4j
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-</code></pre>
-<p>3.添加Druid的配置类</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>edward<span class="token punctuation">.</span>springbootmybaties<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>DruidDataSource<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span>StatViewServlet<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>support<span class="token punctuation">.</span>http<span class="token punctuation">.</span>WebStatFilter<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>context<span class="token punctuation">.</span>properties<span class="token punctuation">.</span>ConfigurationProperties<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>FilterRegistrationBean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>web<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletRegistrationBean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> javax<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>DataSource<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashMap<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
-
-<span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DruidConfig</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token comment" spellcheck="true">//这样yml配置文件才会起作用，和Druid类绑定起来</span>
-    <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"spring.datasource"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> DataSource <span class="token function">druid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DruidDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//配置Druid的监控</span>
-    <span class="token comment" spellcheck="true">//1、配置一个管理后台的Servlet</span>
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> ServletRegistrationBean <span class="token function">statViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        ServletRegistrationBean bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServletRegistrationBean</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StatViewServlet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> initParams <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"loginUsername"</span><span class="token punctuation">,</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"loginPassword"</span><span class="token punctuation">,</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"allow"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//默认就是允许所有访问</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"deny"</span><span class="token punctuation">,</span><span class="token string">"192.168.15.21"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        bean<span class="token punctuation">.</span><span class="token function">setInitParameters</span><span class="token punctuation">(</span>initParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//2、配置一个web监控的filter</span>
-    <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> FilterRegistrationBean <span class="token function">webStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        FilterRegistrationBean bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FilterRegistrationBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        bean<span class="token punctuation">.</span><span class="token function">setFilter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">WebStatFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> initParams <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        initParams<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"exclusions"</span><span class="token punctuation">,</span><span class="token string">"*.js,*.css,/druid/*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        bean<span class="token punctuation">.</span><span class="token function">setInitParameters</span><span class="token punctuation">(</span>initParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        bean<span class="token punctuation">.</span><span class="token function">setUrlPatterns</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"/*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">return</span>  bean<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-
-</code></pre>
+                <ol>
+<li>在github上创建一个仓库<br><img src="https://img-blog.csdnimg.cn/20190302222335638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190302222825469.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>打开git软件<br><img src="https://img-blog.csdnimg.cn/20190302221956602.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190302222026394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.进入项目的目录<br>在windows资源管理器中右击Git Bash Here直接进入<br><img src="https://img-blog.csdnimg.cn/2019030222332179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190302223507403.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<p>第一步： 输入git init，输入后 项目文件夹下多了一个.git文件<br><img src="https://img-blog.csdnimg.cn/20190303101235193.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190303101313151.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>第二步：输入git add .，add后面的点代表上传所有文件，如果想上传单个文件可以把点换成你想上传的文件<br><img src="https://img-blog.csdnimg.cn/20190303101600599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>第四步输入git commit -m “first commit” 双引号内的内容可以自己写 </p>
+<p><img src="https://img-blog.csdnimg.cn/20190303101840222.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这里如果出现以下内容，则需要你输入自己的账号或名字<br><img src="https://img-blog.csdnimg.cn/20190303102013885.png" alt="在这里插入图片描述"><br>第五步输入git remote add origin 自己的地址（上面有说到） 将本地的仓库关联到github上</p>
+<p>最后 输入git push -u origin master，这是把代码上传到github仓库的意思。</p>
+<p><img src="https://img-blog.csdnimg.cn/2019030310344516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
             </div>
             <hr>
@@ -563,19 +463,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/SSM整合逐层配置.html">
+                <a href="/spring-boot 2.1.3配置Druid数据源.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="SSM整合逐层配置">
+                        <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="spring-boot 2.1.3配置Druid数据源">
                         
-                        <span class="card-title">SSM整合逐层配置</span>
+                        <span class="card-title">spring-boot 2.1.3配置Druid数据源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用SSM（Spring、SpringMVC和Mybatis）已经有三个多月了，项目在技术上已经没有什么难点了，基于现有的技术就可以实现想要的功能，当然肯定有很多可以改进的地方。之前没有记录SSM整合的过程，这次刚刚好基于自己的一个小项目重
+                            1.在pom文件添加依赖
+ &lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+        &lt;dependency>
+            &lt;g
                         
                     </div>
                     <div class="publish-info">
@@ -597,12 +500,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SSM/" target="_blank">
-                        <span class="chip bg-color">SSM</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring-Boot</span>
                     </a>
                     
-                    <a href="/tags/前端/" target="_blank">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -616,28 +519,27 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/如何上传项目到github上.html">
+                <a href="/spring-boot 2.1.3整合Mybatis.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="如何上传项目到github">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="spring-boot 2.1.3整合Mybatis">
                         
-                        <span class="card-title">如何上传项目到github</span>
+                        <span class="card-title">spring-boot 2.1.3整合Mybatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-在github上创建一个仓库
-打开git软件3.进入项目的目录在windows资源管理器中右击Git Bash Here直接进入
-
-第一步： 输入git init，输入后 项目文件夹下多了一个.git文件第二步：输入git add .，a
+                            一、注解版1.添加依赖
+&lt;dependency>
+   &lt;groupId>org.mybatis.spring.boot&lt;/groupId>
+    &lt;artifactId>mybatis-spring-boot-s
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-03
                             </span>
                         <span class="publish-author">
                             
@@ -654,8 +556,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/github/" target="_blank">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/Spring-Boot/" target="_blank">
+                        <span class="chip bg-color">Spring-Boot</span>
+                    </a>
+                    
+                    <a href="/tags/Mybaties/" target="_blank">
+                        <span class="chip bg-color">Mybaties</span>
                     </a>
                     
                 </div>
