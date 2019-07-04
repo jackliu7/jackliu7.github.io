@@ -418,7 +418,7 @@
 <blockquote>
 <p>引用计数：Java堆中每一个对象都有一个引用计数属性，引用每新增1次计数加1，引用每释放1次计数减1。</p>
 </blockquote>
-<p>在JDK 1.2以前的版本中，若一个对象不被任何变量引用，那么程序就无法再使用这个对象。也就是说，只有对象处于(reachable)可达状态，程序才能使用它。<br>从JDK 1.2版本开始，对象的引用被划分为4种级别，从而使程序能更加灵活地控制对象的生命周期。这4种级别由高到低依次为：<strong>强引用、软引用、弱引用和虚引用</strong>。<br><img src="https://img-blog.csdnimg.cn/20190701164721818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>在JDK 1.2以前的版本中，若一个对象不被任何变量引用，那么程序就无法再使用这个对象。也就是说，只有对象处于(reachable)可达状态，程序才能使用它。<br>从JDK 1.2版本开始，对象的引用被划分为4种级别，从而使程序能更加灵活地控制对象的生命周期。这4种级别由高到低依次为：<strong>强引用、软引用、弱引用和虚引用</strong>。<br><img src="http://image.edwardliu.work/blog/20190701/4y7PIPKYWOME.png" alt="mark"></p>
 <h2 id="1-强引用-StrongReference"><a href="#1-强引用-StrongReference" class="headerlink" title="1. 强引用(StrongReference)"></a>1. 强引用(StrongReference)</h2><blockquote>
 <p>强引用是使用最普遍的引用。如果一个对象具有强引用，那垃圾回收器绝不会回收它。如下：</p>
 </blockquote>
@@ -584,7 +584,7 @@ String strongReference <span class="token operator">=</span> weakReference<span 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>运行WeakReferenceTest.java，运行结果如下：<br><img src="https://img-blog.csdnimg.cn/2019070117061281.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ZpY3RveXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可见WeakReference对象的生命周期基本由垃圾回收器决定，一旦垃圾回收线程发现了弱引用对象，在下一次GC过程中就会对其进行回收。</p>
+<p>运行WeakReferenceTest.java，运行结果如下：<br><img src="http://image.edwardliu.work/blog/20190701/GaUVBSmDSdbw.png" alt="mark"><br>可见WeakReference对象的生命周期基本由垃圾回收器决定，一旦垃圾回收线程发现了弱引用对象，在下一次GC过程中就会对其进行回收。</p>
 <h2 id="4-虚引用-PhantomReference"><a href="#4-虚引用-PhantomReference" class="headerlink" title="4. 虚引用(PhantomReference)"></a>4. 虚引用(PhantomReference)</h2><blockquote>
 <p>虚引用顾名思义，就是形同虚设。与其他几种引用都不同，虚引用并不会决定对象的生命周期。如果一个对象仅持有虚引用，那么它就和没有任何引用一样，在任何时候都可能被垃圾回收器回收。</p>
 </blockquote>
@@ -596,7 +596,43 @@ ReferenceQueue queue <span class="token operator">=</span> <span class="token ke
 PhantomReference pr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PhantomReference</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> queue<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>程序可以通过判断引用队列中是否已经加入了虚引用，来了解被引用的对象是否将要进行垃圾回收。如果程序发现某个虚引用已经被加入到引用队列，那么就可以在所引用的对象的内存被回收之前采取必要的行动。</p>
-<p><font size="3" color="color">总结:<br>Java中4种引用的级别和强度由高到低依次为：强引用 -&gt; 软引用 -&gt; 弱引用 -&gt; 虚引用<br>当垃圾回收器回收时，某些对象会被回收，某些不会被回收。垃圾回收器会从根对象Object来标记存活的对象，然后将某些不可达的对象和一些引用的对象进行回收。<br>通过表格来说明一下，如下：<br>|引用类型  | 被垃圾回收时间 |用途  | 生存时间 |<br>|–|–|–|–|<br>|强引用|    从来不会    |对象的一般状态|    JVM停止运行时终止|<br>|软引用|    当内存不足时|    对象缓存    |内存不足时终止|<br>|弱引用|    正常垃圾回收时|    对象缓存    |垃圾回收后终止|<br>|虚引用|    正常垃圾回收时|    跟踪对象的垃圾回收|    垃圾回收后终止|</font></p>
+<p><font size="3" color="color">总结:<br>Java中4种引用的级别和强度由高到低依次为：强引用 -&gt; 软引用 -&gt; 弱引用 -&gt; 虚引用<br>当垃圾回收器回收时，某些对象会被回收，某些不会被回收。垃圾回收器会从根对象Object来标记存活的对象，然后将某些不可达的对象和一些引用的对象进行回收。<br>通过表格来说明一下，如下：</font></p>
+<table>
+<thead>
+<tr>
+<th>引用类型</th>
+<th>被垃圾回收时间</th>
+<th>用途</th>
+<th>生存时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>强引用</td>
+<td>从来不会</td>
+<td>对象的一般状态</td>
+<td>JVM停止运行时终止</td>
+</tr>
+<tr>
+<td>软引用</td>
+<td>当内存不足时</td>
+<td>对象缓存</td>
+<td>内存不足时终止</td>
+</tr>
+<tr>
+<td>弱引用</td>
+<td>正常垃圾回收时</td>
+<td>对象缓存</td>
+<td>垃圾回收后终止</td>
+</tr>
+<tr>
+<td>虚引用</td>
+<td>正常垃圾回收时</td>
+<td>跟踪对象的垃圾回收</td>
+<td>垃圾回收后终止</td>
+</tr>
+</tbody>
+</table>
 
             </div>
             <hr>
@@ -636,50 +672,45 @@ PhantomReference pr <span class="token operator">=</span> <span class="token key
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/Java的强引用、软引用、弱引用和虚引用.html">
+                <a href="/Github上10个开源免费且优秀的后台控制面板.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Java的强引用、软引用、弱引用和虚引用">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Github上10个开源免费且优秀的后台控制面板">
                         
-                        <span class="card-title">Java的强引用、软引用、弱引用和虚引用</span>
+                        <span class="card-title">Github上10个开源免费且优秀的后台控制面板</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java执行GC判断对象是否存活有两种方式其中一种是引用计数。
-
-引用计数：Java堆中每一个对象都有一个引用计数属性，引用每新增1次计数加1，引用每释放1次计数减1。
-
-在JDK 1.2以前的版本中，若一个对象不被任何变量引用，那么程序就
+                            
+Web 开发中几乎的平台都需要一个后台管理，但是从零开发一套后台控制面板并不容易，幸运的是有很多开源免费的后台控制面板可以给开发者使用，那么有哪些优秀的开源免费的控制面板呢？我在 Github 上收集了一些优秀的后台控制面板，并总结得出 
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category" target="_blank">
-                                    java
+                            <a href="/categories/WEB开发/" class="post-category" target="_blank">
+                                    WEB开发
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/github/" target="_blank">
+                        <span class="chip bg-color">github</span>
                     </a>
                     
                 </div>
